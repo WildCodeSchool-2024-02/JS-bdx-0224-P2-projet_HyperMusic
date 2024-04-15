@@ -45,7 +45,7 @@
   /* Images & cards */
   --opacity-card: 0.5;
   --outside-shadow: 0 0.25rem 0.25rem 0 rgba(var(--secondary-color-rgb), 0.25);
-  --inner-shadow: rgba(var(--secondary-color-rgb), 0.25) 0 0.25rem 0.25rem 0
+  --inner-shadow: rgba(var(--secondary-color-rgb), 0.2) 0 0.25rem 0.25rem 0
     inset;
   --rounded: 1.25rem;
   --bg-mobile-card-width: 11.875rem;
