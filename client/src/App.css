@@ -72,7 +72,11 @@ body {
   background-attachment: fixed;
 }
 
-.header {
+header {
+  display: flex;
+}
+
+.topPage {
   background-color: var(--secondary-color);
   border-bottom: 0.1rem solid var(--primary-color);
   width: 100%;
@@ -88,7 +92,11 @@ body {
   height: 4rem;
 }
 
-.footer {
+.topPage > p {
+  display: none;
+}
+
+.navBarBottom {
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
@@ -105,6 +113,60 @@ body {
   justify-items: center;
 }
 
-footer > p {
+nav > p {
   margin: 0.5rem;
+}
+
+footer {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .topPage {
+    background-color: var(--secondary-color);
+    border-bottom: 0.1rem solid var(--primary-color);
+    width: 100%;
+    color: var(--primary-color);
+    font-size: var(--title-mobile);
+    font-family: var(--font-title);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topPage > p {
+    display: flex;
+    padding-right: 6rem;
+    color: var(--primary-color);
+    font-size: var(--primary-content-mobile);
+    font-weight: var(--bold);
+    font-family: var(--font-content);
+  }
+
+  .navBarBottom {
+    display: none;
+  }
+
+  footer {
+    background-color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    padding-top: 0.5rem;
+    margin-top: 0;
+    bottom: 0;
+    border-top: 0.1rem solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: var(--primary-content-mobile);
+    font-family: var(--font-content);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer > p:first-child {
+    padding-left: 2rem;
+  }
+
+  footer > p:last-child {
+    padding-right: 2rem;
+  }
 }

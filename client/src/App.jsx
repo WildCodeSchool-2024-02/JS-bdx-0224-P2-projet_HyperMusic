@@ -8,7 +8,7 @@ function App() {
       <Header />
       <Footer />
     </>
-  )
+  );
 }
 
 export default App;
