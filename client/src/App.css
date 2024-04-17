@@ -99,16 +99,10 @@ h2 {
   grid-template-columns: 1fr 1fr;
 }
 
-/*.artist-card::before {
-  display: flex;
-   overflow-x: auto;
-  scrollbar-width: none; 
-}*/
-
 .artist-picture {
   width: var(--img-mobile-card);
   height: var(--img-mobile-card);
-  border-radius: var(--rounded);
+  border-radius: 3rem;
   border: var(--border-img-card) solid var(--secondary-color);
   box-shadow: var(--outside-shadow);
   place-self: center;
@@ -133,4 +127,11 @@ h2 {
   font-size: var(--primary-content-mobile);
   font-weight: var(--bold);
   display: block;
+}
+
+/* défilement horizontal sandbox */
+
+.popular-artist {
+  overflow-x: auto;
+  white-space: nowrap;
 }
