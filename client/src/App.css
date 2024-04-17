@@ -92,7 +92,7 @@ header {
   height: 4rem;
 }
 
-.topPage > p {
+.linkToOtherPages {
   display: none;
 }
 
@@ -148,16 +148,21 @@ footer {
   }
 
   .topPage > h1 {
-    transform: translate(-160%);
+    transform: translate(-250%);
   }
 
-  .topPage > p {
+  .topPage > a {
     display: flex;
-    padding-right: 6rem;
+    padding-right: 25rem;
+    text-decoration: none;
     color: var(--primary-color);
     font-size: var(--primary-content-mobile);
     font-weight: var(--bold);
     font-family: var(--font-content);
+  }
+
+  .topPage > a:last-child {
+    padding-right: 5rem;
   }
 
   .navBarBottom {
