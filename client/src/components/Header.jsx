@@ -11,10 +11,10 @@ function Header() {
         />
       </Link>
       <h1>Hypermusic</h1>
-      <Link to="/pages/Research" className="linkToOtherPages">
+      <Link to="/research" className="linkToOtherPages">
         Research
       </Link>
-      <Link to="/pages/Discovery" className="linkToOtherPages">
+      <Link to="/discovery" className="linkToOtherPages">
         Discovery
       </Link>
     </header>

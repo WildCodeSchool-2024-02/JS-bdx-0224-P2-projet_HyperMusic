@@ -10,24 +10,24 @@ function Footer() {
       <nav className="navBarBottom">
         <Link to="/">
           <img className="homeIcone" src={homeSrc} alt="back to the homepage" />
+          Home
         </Link>
-        <Link to="/pages/Research">
+        <Link to="/research">
           <img
             className="searchIcone"
             src={researchSrc}
             alt="go to research page"
           />
+          Research
         </Link>
-        <Link to="/pages/Discovery">
+        <Link to="/discovery">
           <img
             className="shuffleIcone"
             src={discoverySrc}
             alt="go to discovery page"
           />
+          Discovery
         </Link>
-        <p>Home</p>
-        <p>Research</p>
-        <p>Discovery</p>
       </nav>
       <footer>
         <p>Terms of use</p>
