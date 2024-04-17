@@ -1,22 +1,30 @@
+import { Link } from "react-router-dom";
+
+const homeSrc = "src/assets/images/Home.svg";
+const researchSrc = "src/assets/images/Search.svg";
+const discoverySrc = "src/assets/images/Shuffle.svg";
+
 function Footer() {
   return (
     <>
       <nav className="navBarBottom">
-        <img
-          className="homeIcone"
-          src="src\assets\images/Home.svg"
-          alt="back to the homepage"
-        />
-        <img
-          className="searchIcone"
-          src="src/assets/images/Search.svg"
-          alt="go to research page"
-        />
-        <img
-          className="shuffleIcone"
-          src="src/assets/images/Shuffle.svg"
-          alt="go to discovery page"
-        />
+        <Link to="/">
+          <img className="homeIcone" src={homeSrc} alt="back to the homepage" />
+        </Link>
+        <Link to="/pages/Research">
+          <img
+            className="searchIcone"
+            src={researchSrc}
+            alt="go to research page"
+          />
+        </Link>
+        <Link to="/pages/Discovery">
+          <img
+            className="shuffleIcone"
+            src={discoverySrc}
+            alt="go to discovery page"
+          />
+        </Link>
         <p>Home</p>
         <p>Research</p>
         <p>Discovery</p>
