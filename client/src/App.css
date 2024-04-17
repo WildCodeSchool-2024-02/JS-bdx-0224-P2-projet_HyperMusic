@@ -88,17 +88,22 @@ h2 {
 /* Artist card */
 
 .artist-card {
-  margin: 0 1.875rem 0 0.5rem;
+  margin: 0 1rem 1rem 0.5rem;
   background: rgba(var(--primary-color-rgb), var(--opacity-card));
   border-radius: var(--rounded);
-  border: var(--border-card) solid var(--secondary-color);
-  box-shadow: var(--outside-shadow);
-  box-shadow: var(--inner-shadow);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
   height: var(--bg-mobile-card-height);
   width: var(--bg-mobile-card-width);
-  display: grid;
+  display: inline-grid;
   grid-template-columns: 1fr 1fr;
 }
+
+/*.artist-card::before {
+  display: flex;
+   overflow-x: auto;
+  scrollbar-width: none; 
+}*/
 
 .artist-picture {
   width: var(--img-mobile-card);
@@ -109,7 +114,7 @@ h2 {
   place-self: center;
 }
 
-.artist-card > p {
+.artist-card > figcaption {
   background: var(--primary-color-rgb);
   font-family: var(--font-content);
   color: var(--secondary-color);
@@ -125,7 +130,7 @@ h2 {
 
 .artist-name {
   background: var(--primary-color-rgb);
-  font-size: clamp(var(--primary-content-mobile), 1.2rem);
+  font-size: var(--primary-content-mobile);
   font-weight: var(--bold);
   display: block;
 }

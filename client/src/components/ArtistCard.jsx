@@ -1,17 +1,21 @@
-export default function ArtistCard() {
+import PropTypes from "prop-types";
+
+export default function ArtistCard({ artistName, imageUrl }) {
   return (
-    <section className="popular-artist">
-      <h2>Artistes à succès :</h2>
-      <section className="artist-card">
-        <img
-          src="https://cdns-images.dzcdn.net/images/artist/c8258a5de70dcf04c43762c6182ffc5b/264x264.jpg"
-          alt="artist illustration"
-          className="artist-picture"
-        />
-        <p>
-          Artiste : <strong className="artist-name">Meltt</strong>
-        </p>
-      </section>
-    </section>
+    <figure className="artist-card">
+      <img
+        src={imageUrl}
+        alt="artist illustration"
+        className="artist-picture"
+      />
+      <figcaption>
+        Artiste : <strong className="artist-name">{artistName}</strong>
+      </figcaption>
+    </figure>
   );
 }
+
+ArtistCard.propTypes = {
+  artistName: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+};
