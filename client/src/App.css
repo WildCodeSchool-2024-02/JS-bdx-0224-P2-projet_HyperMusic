@@ -94,7 +94,7 @@ body {
 }
 
 .searchbarInput {
-  width: 50%;
+  width: 70%;
   height: 2.1rem;
   padding: 10px;
   border: 1px solid var(--primary-color);
@@ -107,6 +107,7 @@ body {
   color: var(--secondary-color);
   font-family: var(--font-content);
   font-weight: var(--medium);
+  font-size: 0.85rem;
 }
 
 button {
@@ -117,4 +118,14 @@ button img {
   background: rgba(var(--primary-color-rgb), var(--opacity-card));
   display: flex;
   padding-left: 20px;
+}
+
+@media screen and (min-width: 780px) {
+  .searchbarInput {
+    width: 40%;
+  }
+
+  .searchbarInput::placeholder {
+    font-size: 1rem;
+  }
 }
