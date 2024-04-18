@@ -85,7 +85,12 @@ h2 {
   margin: 0.7rem;
 }
 
-/* Artist card */
+/* Popular artist section */
+
+.popular-artist {
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
 .artist-card {
   margin: 0 1rem 1rem 0.5rem;
@@ -93,8 +98,8 @@ h2 {
   border-radius: var(--rounded);
   border: var(--border-card) solid var(--primary-color);
   box-shadow: var(--outside-shadow), var(--inner-shadow);
-  height: var(--bg-mobile-card-height);
   width: var(--bg-mobile-card-width);
+  height: var(--bg-mobile-card-height);
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -102,7 +107,7 @@ h2 {
 .artist-picture {
   width: var(--img-mobile-card);
   height: var(--img-mobile-card);
-  border-radius: 3rem;
+  border-radius: 50%;
   border: var(--border-img-card) solid var(--secondary-color);
   box-shadow: var(--outside-shadow);
   place-self: center;
@@ -119,19 +124,34 @@ h2 {
   flex-direction: column;
   justify-content: center;
   margin-left: 0.3rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  padding-right: 0.1rem;
+  white-space: normal;
 }
 
 .artist-name {
   background: var(--primary-color-rgb);
   font-size: var(--primary-content-mobile);
   font-weight: var(--bold);
-  display: block;
 }
 
-/* défilement horizontal sandbox */
+@media screen and (min-width: 992px) {
+  .artist-card {
+    width: var(--bg-desktop-card-width);
+    height: var(--bg-desktop-card-height);
+  }
 
-.popular-artist {
-  overflow-x: auto;
-  white-space: nowrap;
+  .artist-picture {
+    width: var(--img-desktop-card);
+    height: var(--img-desktop-card);
+    margin: 0 0.8rem 0 0.8rem;
+  }
+
+  .artist-card > figcaption {
+    font-size: var(--secondary-content-desktop);
+  }
+
+  .artist-name {
+    font-size: var(--primary-content-desktop);
+  }
 }

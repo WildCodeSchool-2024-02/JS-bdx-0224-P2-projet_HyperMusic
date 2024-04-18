@@ -53,7 +53,7 @@ function App() {
     )
       .then((result) => result.json())
       .then((data) => {
-        const shuffledArtists = shuffleArray(data.artists).slice(0, 20);
+        const shuffledArtists = shuffleArray(data.artists).slice(0, 12);
         setArtistData(shuffledArtists);
       })
       .catch((error) => {
