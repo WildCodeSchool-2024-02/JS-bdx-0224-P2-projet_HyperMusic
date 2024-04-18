@@ -39,7 +39,7 @@ function App() {
         console.error("Error getting token:", error);
       });
 
-    const artistParameters = {
+    const authAccess = {
       method: "GET",
       headers: {
         "Content-type": "application/json",
@@ -49,11 +49,11 @@ function App() {
 
     fetch(
       `https://api.spotify.com/v1/artists?ids=${artistIdsString}`,
-      artistParameters
+      authAccess
     )
       .then((result) => result.json())
       .then((data) => {
-        const shuffledArtists = shuffleArray(data.artists).slice(0, 12);
+        const shuffledArtists = shuffleArray(data.artists).slice(0, 10);
         setArtistData(shuffledArtists);
       })
       .catch((error) => {

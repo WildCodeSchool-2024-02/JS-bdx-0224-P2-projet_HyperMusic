@@ -33,18 +33,20 @@ const artistIds = [
   "60d24wfXkVzDSfLS6hyCjZ",
   "1HBjj22wzbscIZ9sEb5dyf",
   "6BrvowZBreEkXzJQMpL174",
-  "4D75GcNG95ebPtNvoNVXhz",
+  "6olE6TJLqED3rqDCT0FyPh",
   "4AVFqumd2ogHFlRbKIjp1t",
   "3534yWWzmxx8NbKVoNolsK",
   "2FXC3k01G6Gw61bmprjgqS",
   "3nFkdlSjzX9mRTtwJOzDYB",
   "2YZyLoL8N0Wb9xBt1NhZWg",
   "13ubrt8QOOCPljQ2FL1Kca",
-  "4O15NlyKLIASxsJ0PrXPfz",
   "64M6ah0SkkRsnPGtGiRAbb",
   "25uiPmTg16RbhZWAqwLBy5",
   "4NHQUGzhtTLFvgF5SZesLK",
   "0du5cEVh5yTK9QJze8zA0C",
+  "64tNsm6TnZe2zpcMVMOoHL",
+  "3Ri4H12KFyu98LMjSoij5V",
+  "4MzJMcHQBl9SIYSjwWn8QW"
 ];
 
 export default artistIds;

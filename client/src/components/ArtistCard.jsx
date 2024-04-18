@@ -8,7 +8,7 @@ export default function ArtistCard({ artistName, imageUrl }) {
         alt="artist illustration"
         className="artist-picture"
       />
-      <figcaption>
+      <figcaption className="artist-desc">
         Artiste : <strong className="artist-name">{artistName}</strong>
       </figcaption>
     </figure>

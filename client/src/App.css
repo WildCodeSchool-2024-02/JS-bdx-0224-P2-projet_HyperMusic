@@ -90,6 +90,7 @@ h2 {
 .popular-artist {
   overflow-x: auto;
   white-space: nowrap;
+  scrollbar-width: none;
 }
 
 .artist-card {
@@ -113,7 +114,7 @@ h2 {
   place-self: center;
 }
 
-.artist-card > figcaption {
+.artist-desc {
   background: var(--primary-color-rgb);
   font-family: var(--font-content);
   color: var(--secondary-color);
@@ -141,7 +142,7 @@ h2 {
     height: var(--bg-desktop-card-height);
   }
 
-  .artist-picture {
+  .artist-desc {
     width: var(--img-desktop-card);
     height: var(--img-desktop-card);
     margin: 0 0.8rem 0 0.8rem;
