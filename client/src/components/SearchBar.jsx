@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 function SearchBar({ searchResult }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,10 +9,8 @@ function SearchBar({ searchResult }) {
   };
 
   const handleSearch = () => {
-    if (searchTerm.trim() !== "") {
-      if (searchResult) {
-        searchResult(searchTerm);
-      }
+    if (searchResult) {
+      searchResult(searchTerm);
     }
   };
   const handleKeyPress = (event) => {
@@ -22,6 +20,9 @@ function SearchBar({ searchResult }) {
   };
   return (
     <section className="searchbar">
+      <label htmlFor="searchbarInput">
+        Entrez un nom d'artiste ou un album :
+      </label>
       <input
         type="search"
         className="searchbarInput"
@@ -31,7 +32,7 @@ function SearchBar({ searchResult }) {
         onKeyDown={handleKeyPress}
       />
       <button type="button" onClick={handleSearch}>
-       <img src="..\src\assets\images\icons8-chercher (1).svg" alt="Result" />
+        <img src="..\src\assets\images\icons8-chercher (1).svg" alt="Result" />
       </button>
     </section>
   );

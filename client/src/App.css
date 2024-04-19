@@ -100,7 +100,6 @@ body {
   border: 1px solid var(--primary-color);
   border-radius: 1rem;
   background: var(--primary-color);
-  font: var(--primary-color);
 }
 
 .searchbarInput::placeholder {
@@ -118,6 +117,27 @@ button img {
   background: rgba(var(--primary-color-rgb), var(--opacity-card));
   display: flex;
   padding-left: 20px;
+}
+
+.albumImage {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.cardAlbum {
+  display: flex;
+  padding: 10px;
+  justify-items: center;
+}
+
+.albumName {
+  font-size: 30px;
+  font-family: var(--font-content);
+}
+
+label {
+  font-size: 0px;
 }
 
 @media screen and (min-width: 780px) {

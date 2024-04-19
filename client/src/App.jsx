@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import SearchBar from "./components/SearchBar";
-
 import "./App.css";
 
 const clientId = import.meta.env.VITE_CLIENT_ID;
@@ -32,36 +31,34 @@ function App() {
       },
     };
 
-    const artistID = await fetch(
+    const idResponse = await fetch(
       `https://api.spotify.com/v1/search?q=${searchTerm}&type=artist`,
       searchParameters
-    )
-      .then((response) => response.json())
-      .then((data) => data.artists.items[0].id);
+    );
+    const artistData = await idResponse.json();
+    const artistID = artistData.artists.items[0].id;
 
-    const albumsData = await fetch(
+    const albumsResponse = await fetch(
       `https://api.spotify.com/v1/artists/${artistID}/albums?include_groups=album&market=US&limit=50`,
       searchParameters
-    )
-      .then((response) => response.json())
-      .then((data) => data.items);
-
-    setAlbums(albumsData);
+    );
+    const albumsData = await albumsResponse.json();
+    setAlbums(albumsData.items);
   }
 
-  const searchResult = searchAlbums
+  const searchResult = searchAlbums;
 
   return (
     <>
       <SearchBar searchResult={searchResult} />
       {albums.map((album) => (
-        <section key={album.id}>
+        <section className="cardAlbum" key={album.id}>
           <img
-            className="album-image"
+            className="albumImage"
             src={album.images[0]?.url}
             alt={album.name}
           />
-          <h4 className="album-name">{album.name}</h4>
+          <h3 className="albumName">{album.name}</h3>
         </section>
       ))}
     </>
