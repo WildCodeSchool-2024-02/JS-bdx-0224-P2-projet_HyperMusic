@@ -31,18 +31,23 @@
   --album-artist-name-desktop: 1.5rem;
 
   /* Font weights */
-  --regular: 400;
+
   --medium: 500;
   --semi-bold: 600;
   --bold: 700;
-  --bolder: 800;
 
   /* Other font style */
-  --font-stroke: -1px -1px 0 var(--secondary-color),
-    1px -1px 0 var(--secondary-color), -1px 1px 0 var(--secondary-color),
-    1px 1px 0 var(--secondary-color);
+  --font-stroke: -0.025rem -0.025rem var(--secondary-color),
+    0.025rem -0.025rem var(--secondary-color),
+    -0.025rem 0.025rem var(--secondary-color),
+    0.025rem 0.025rem var(--secondary-color),
+    0.05rem 0.05rem var(--secondary-color);
 
   /* Images & cards */
+  --opacity-card: 0.5;
+  --outside-shadow: 0 0.25rem 0.25rem 0 rgba(var(--secondary-color-rgb), 0.25);
+  --inner-shadow: rgba(var(--secondary-color-rgb), 0.2) 0 0.25rem 0.25rem 0
+    inset;
   --rounded: 1.25rem;
   --bg-mobile-card-width: 11.875rem;
   --bg-mobile-card-height: 6.25rem;
@@ -64,13 +69,27 @@
   --shuffle-album-desktop: 15rem;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
   background: var(--bg-gradient);
   background-attachment: fixed;
 }
+
+h2 {
+  font-size: var(--title-mobile);
+  font-family: var(--font-title);
+  font-weight: var(--bold);
+  color: var(--primary-color);
+  text-shadow: var(--font-stroke);
+  margin: 0.7rem;
+}
+
+/* Header & Navbar */
 
 header {
   display: flex;
@@ -125,6 +144,61 @@ nav > a {
   margin: 0.5rem;
 }
 
+/* Sections */
+
+.popular-artist {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+/* Cards */
+
+.artist-card {
+  margin: 0 1rem 1rem 0.5rem;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: var(--bg-mobile-card-width);
+  height: var(--bg-mobile-card-height);
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.artist-picture {
+  width: var(--img-mobile-card);
+  height: var(--img-mobile-card);
+  border-radius: 50%;
+  border: var(--border-img-card) solid var(--secondary-color);
+  box-shadow: var(--outside-shadow);
+  place-self: center;
+}
+
+.artist-desc {
+  background: var(--primary-color-rgb);
+  font-family: var(--font-content);
+  color: var(--secondary-color);
+  font-size: var(--secondary-content-mobile);
+  font-weight: var(--medium);
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0.3rem;
+  padding-bottom: 0.4rem;
+  padding-right: 0.1rem;
+  white-space: normal;
+}
+
+.artist-name {
+  background: var(--primary-color-rgb);
+  font-size: var(--primary-content-mobile);
+  font-weight: var(--bold);
+}
+
+/* Footer */
+
 footer {
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -142,7 +216,9 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
-  .topPage {
+    /* Header & Navbar */
+  
+    .topPage {
     background-color: var(--secondary-color);
     border-bottom: 0.1rem solid var(--primary-color);
     width: 100%;
@@ -175,8 +251,31 @@ footer {
   .navBarBottom {
     display: none;
   }
+  
+  /* Cards */
+  
+  .artist-card {
+    width: var(--bg-desktop-card-width);
+    height: var(--bg-desktop-card-height);
+  }
 
-  footer {
+  .artist-desc {
+    width: var(--img-desktop-card);
+    height: var(--img-desktop-card);
+    margin: 0 0.8rem 0 0.8rem;
+  }
+
+  .artist-card > figcaption {
+    font-size: var(--secondary-content-desktop);
+  }
+
+  .artist-name {
+    font-size: var(--primary-content-desktop);
+  }
+  
+  /* Footer */
+    
+    footer {
     background-color: var(--secondary-color);
     position: fixed;
     width: 100%;
