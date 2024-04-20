@@ -11,7 +11,6 @@ function App() {
 
   const [artistData, setArtistData] = useState([]);
   const [albumData, setAlbumData] = useState([]);
-  const [isLoading, setLoading] = useState(true);
   const [accessToken, setAccessToken] = useState("");
   const artistIdsString = artistIds.join(",");
   const albumIdsString = albumIds.join(",");
@@ -41,10 +40,7 @@ function App() {
 
     fetch("https://accounts.spotify.com/api/token", authParameters)
       .then((result) => result.json())
-      .then((data) => {
-        setAccessToken(data.access_token);
-        setLoading(false);
-      })
+      .then((data) => setAccessToken(data.access_token))
       .catch((error) => {
         console.error("Error getting token:", error);
       });
@@ -84,10 +80,6 @@ function App() {
         console.error("Error fetching album data:", error);
       });
   }, []);
-
-  if (isLoading) {
-    return <h2 className="App">Loading...</h2>;
-  }
 
   return (
     <>
