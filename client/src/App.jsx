@@ -1,15 +1,19 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import ArtistCard from "./components/ArtistCard";
+import AlbumCard from "./components/AlbumCard";
 import artistIds from "./artistIds";
+import albumIds from "./albumIds";
 
 function App() {
   const clientId = import.meta.env.VITE_CLIENT_ID;
   const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
   const [artistData, setArtistData] = useState([]);
+  const [albumData, setAlbumData] = useState([]);
   const [accessToken, setAccessToken] = useState("");
   const artistIdsString = artistIds.join(",");
+  const albumIdsString = albumIds.join(",");
 
   const shuffleArray = (array) => {
     const shuffledArray = [...array];
@@ -22,6 +26,8 @@ function App() {
     }
     return shuffledArray;
   };
+
+  const getOnlyYear = (dateString) => `(${dateString.split("-")[0]})`;
 
   useEffect(() => {
     const authParameters = {
@@ -59,16 +65,49 @@ function App() {
       .catch((error) => {
         console.error("Error fetching artist data:", error);
       });
+
+    fetch(`https://api.spotify.com/v1/albums?ids=${albumIdsString}`, authAccess)
+      .then((result) => result.json())
+      .then((data) => {
+        const shuffledAlbums = shuffleArray(data.albums).slice(0, 10);
+        const albumsWithYear = shuffledAlbums.map((album) => ({
+          ...album,
+          releaseYear: getOnlyYear(album.release_date),
+        }));
+        setAlbumData(albumsWithYear);
+      })
+      .catch((error) => {
+        console.error("Error fetching album data:", error);
+      });
   }, []);
 
   return (
     <>
+      <h2>Albums incontournables :</h2>
+      <section className="best-album">
+        {albumData.map((album) => (
+          <AlbumCard
+            key={album.id}
+            artistNameAlbum={
+              album.artists[0].name.slice(0, 24) +
+              (album.artists[0].name.length > 24 ? "..." : "")
+            }
+            albumName={
+              album.name.slice(0, 26) + (album.name.length > 26 ? "..." : "")
+            }
+            imageAlbumUrl={album.images[1].url}
+            releaseDate={album.releaseYear}
+          />
+        ))}
+      </section>
       <h2>Artistes à succès :</h2>
       <section className="popular-artist">
         {artistData.map((artist) => (
           <ArtistCard
-            key={artist.name}
-            artistName={artist.name}
+            key={artist.id}
+            artistName={
+              artist.name.slice(0, 34) + (artist.name.length > 34 ? "..." : "")
+            }
             imageUrl={artist.images[1].url}
           />
         ))}

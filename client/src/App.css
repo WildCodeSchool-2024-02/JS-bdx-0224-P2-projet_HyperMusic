@@ -88,15 +88,17 @@ h2 {
   margin: 0.7rem;
 }
 
-/* Popular artist section */
+/* Home page sections & cards */
 
-.popular-artist {
+.popular-artist,
+.best-album {
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
 }
 
-.artist-card {
+.artist-card,
+.album-card {
   margin: 0 1rem 1rem 0.5rem;
   background: rgba(var(--primary-color-rgb), var(--opacity-card));
   border-radius: var(--rounded);
@@ -108,7 +110,8 @@ h2 {
   grid-template-columns: 1fr 1fr;
 }
 
-.artist-picture {
+.artist-picture,
+.album-picture {
   width: var(--img-mobile-card);
   height: var(--img-mobile-card);
   border-radius: 50%;
@@ -117,7 +120,14 @@ h2 {
   place-self: center;
 }
 
-.artist-desc {
+.album-picture {
+  border-radius: var(--rounded);
+}
+
+.artist-desc,
+.album-desc {
+  margin-top: 0.3rem;
+  padding-right: 0.1rem;
   background: var(--primary-color-rgb);
   font-family: var(--font-content);
   color: var(--secondary-color);
@@ -127,35 +137,44 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 0.3rem;
-  padding-bottom: 0.4rem;
-  padding-right: 0.1rem;
   white-space: normal;
+  overflow: hidden;
+  max-height: 90%;
 }
 
-.artist-name {
+.artist-desc {
+  margin-left: 0.3rem;
+  padding-bottom: 0.4rem;
+}
+
+.artist-name,
+.artist-name-album {
   background: var(--primary-color-rgb);
   font-size: var(--primary-content-mobile);
   font-weight: var(--bold);
 }
 
 @media screen and (min-width: 992px) {
-  .artist-card {
+  .artist-card,
+  .album-card {
     width: var(--bg-desktop-card-width);
     height: var(--bg-desktop-card-height);
   }
 
-  .artist-desc {
+  .artist-picture,
+  .album-picture {
     width: var(--img-desktop-card);
     height: var(--img-desktop-card);
     margin: 0 0.8rem 0 0.8rem;
   }
 
-  .artist-card > figcaption {
+  .artist-desc,
+  .album-desc {
     font-size: var(--secondary-content-desktop);
   }
 
-  .artist-name {
+  .artist-name,
+  .artist-name-album {
     font-size: var(--primary-content-desktop);
   }
 }
