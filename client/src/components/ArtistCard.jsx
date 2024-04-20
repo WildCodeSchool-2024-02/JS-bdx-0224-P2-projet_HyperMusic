@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-export default function ArtistCard({ artistName, imageUrl }) {
+export default function ArtistCard({ artistName, imageArtist }) {
   return (
     <figure className="artist-card">
       <img
-        src={imageUrl}
+        src={imageArtist}
         alt="artist illustration"
         className="artist-picture"
       />
@@ -17,5 +17,5 @@ export default function ArtistCard({ artistName, imageUrl }) {
 
 ArtistCard.propTypes = {
   artistName: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
+  imageArtist: PropTypes.string.isRequired,
 };

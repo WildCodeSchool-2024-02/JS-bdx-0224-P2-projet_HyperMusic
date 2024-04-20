@@ -95,7 +95,7 @@ function App() {
             albumName={
               album.name.slice(0, 26) + (album.name.length > 26 ? "..." : "")
             }
-            imageAlbumUrl={album.images[1].url}
+            imageAlbum={album.images[1].url}
             releaseDate={album.releaseYear}
           />
         ))}
@@ -108,7 +108,7 @@ function App() {
             artistName={
               artist.name.slice(0, 34) + (artist.name.length > 34 ? "..." : "")
             }
-            imageUrl={artist.images[1].url}
+            imageArtist={artist.images[1].url}
           />
         ))}
       </section>

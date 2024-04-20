@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 export default function AlbumCard({
   artistNameAlbum,
   albumName,
-  imageAlbumUrl,
+  imageAlbum,
   releaseDate,
 }) {
   return (
     <figure className="album-card">
       <img
-        src={imageAlbumUrl}
+        src={imageAlbum}
         alt="album illustration"
         className="album-picture"
       />
@@ -24,7 +24,7 @@ export default function AlbumCard({
 AlbumCard.propTypes = {
   artistNameAlbum: PropTypes.string.isRequired,
   albumName: PropTypes.string.isRequired,
-  imageAlbumUrl: PropTypes.string.isRequired,
+  imageAlbum: PropTypes.string.isRequired,
   releaseDate: PropTypes.string,
 };
 
