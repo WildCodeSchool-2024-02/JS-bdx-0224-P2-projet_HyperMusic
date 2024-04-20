@@ -127,19 +127,17 @@ h2 {
 .artist-desc,
 .album-desc {
   margin-top: 0.3rem;
-  padding-right: 0.1rem;
+  padding-right: 0.2rem;
   background: var(--primary-color-rgb);
   font-family: var(--font-content);
   color: var(--secondary-color);
   font-size: var(--secondary-content-mobile);
   font-weight: var(--medium);
   grid-column: 2/3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin: auto;
   white-space: normal;
-  overflow: hidden;
-  max-height: 90%;
+  max-height: 6rem;
+  overflow-y: scroll;
 }
 
 .artist-desc {
@@ -152,6 +150,7 @@ h2 {
   background: var(--primary-color-rgb);
   font-size: var(--primary-content-mobile);
   font-weight: var(--bold);
+  display: block;
 }
 
 @media screen and (min-width: 992px) {
