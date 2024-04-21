@@ -140,7 +140,7 @@ label {
   font-size: 0px;
 }
 
-@media screen and (min-width: 780px) {
+@media screen and (min-width: 992px) {
   .searchbarInput {
     width: 40%;
   }
