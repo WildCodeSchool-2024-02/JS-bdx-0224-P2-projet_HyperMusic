@@ -2,18 +2,22 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import ArtistCard from "./components/ArtistCard";
 import AlbumCard from "./components/AlbumCard";
+import MusicCard from "./components/MusicCard";
 import artistIds from "./artistIds";
 import albumIds from "./albumIds";
+import musicIds from "./musicIds";
 
 function App() {
   const clientId = import.meta.env.VITE_CLIENT_ID;
   const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
+  const [accessToken, setAccessToken] = useState("");
   const [artistData, setArtistData] = useState([]);
   const [albumData, setAlbumData] = useState([]);
-  const [accessToken, setAccessToken] = useState("");
+  const [musicData, setMusicData] = useState([]);
   const artistIdsString = artistIds.join(",");
   const albumIdsString = albumIds.join(",");
+  const musicIdsString = musicIds.join(",");
 
   const shuffleArray = (array) => {
     const shuffledArray = [...array];
@@ -79,6 +83,16 @@ function App() {
       .catch((error) => {
         console.error("Error fetching album data:", error);
       });
+
+    fetch(`https://api.spotify.com/v1/tracks?ids=${musicIdsString}`, authAccess)
+      .then((result) => result.json())
+      .then((data) => {
+        const shuffledMusics = shuffleArray(data.tracks).slice(0, 10);
+        setMusicData(shuffledMusics);
+      })
+      .catch((error) => {
+        console.error("Error fetching music data:", error);
+      });
   }, []);
 
   return (
@@ -97,6 +111,17 @@ function App() {
             }
             imageAlbum={album.images[1].url}
             releaseDate={album.releaseYear}
+          />
+        ))}
+      </section>
+      <h2>Le choix de l&apos;équipe :</h2>
+      <section className="team-choice">
+        {musicData.map((music) => (
+          <MusicCard
+            key={music.id}
+            artistNameMusic={music.artists[0].name}
+            musicName={music.name}
+            imageMusic={music.album.images[1].url}
           />
         ))}
       </section>

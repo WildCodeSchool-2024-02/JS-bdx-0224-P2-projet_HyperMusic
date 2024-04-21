@@ -91,14 +91,16 @@ h2 {
 /* Home page sections & cards */
 
 .popular-artist,
-.best-album {
+.best-album,
+.team-choice {
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
 }
 
 .artist-card,
-.album-card {
+.album-card,
+.music-card {
   margin: 0 1rem 1rem 0.5rem;
   background: rgba(var(--primary-color-rgb), var(--opacity-card));
   border-radius: var(--rounded);
@@ -111,7 +113,8 @@ h2 {
 }
 
 .artist-picture,
-.album-picture {
+.album-picture,
+.music-picture {
   width: var(--img-mobile-card);
   height: var(--img-mobile-card);
   border-radius: 50%;
@@ -120,12 +123,14 @@ h2 {
   place-self: center;
 }
 
-.album-picture {
+.album-picture,
+.music-picture {
   border-radius: var(--rounded);
 }
 
 .artist-desc,
-.album-desc {
+.album-desc,
+.music-desc {
   margin-top: 0.3rem;
   padding-right: 0.2rem;
   background: var(--primary-color-rgb);
@@ -147,7 +152,8 @@ h2 {
 }
 
 .artist-name,
-.artist-name-album {
+.artist-name-album,
+.artist-name-music {
   background: var(--primary-color-rgb);
   font-size: var(--primary-content-mobile);
   font-weight: var(--bold);
@@ -156,25 +162,29 @@ h2 {
 
 @media screen and (min-width: 992px) {
   .artist-card,
-  .album-card {
+  .album-card,
+  .music-card {
     width: var(--bg-desktop-card-width);
     height: var(--bg-desktop-card-height);
   }
 
   .artist-picture,
-  .album-picture {
+  .album-picture,
+  .music-picture {
     width: var(--img-desktop-card);
     height: var(--img-desktop-card);
     margin: 0 0.8rem 0 0.8rem;
   }
 
   .artist-desc,
-  .album-desc {
+  .album-desc,
+  .music-desc {
     font-size: var(--secondary-content-desktop);
   }
 
   .artist-name,
-  .artist-name-album {
+  .artist-name-album,
+  .artist-name-music {
     font-size: var(--primary-content-desktop);
   }
 }
