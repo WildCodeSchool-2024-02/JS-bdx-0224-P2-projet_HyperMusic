@@ -1,5 +1,8 @@
-import "./App.css";
 import { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import ArtistCard from "./components/ArtistCard";
 import artistIds from "./artistIds";
 
@@ -63,6 +66,11 @@ function App() {
 
   return (
     <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
       <h2>Artistes à succès :</h2>
       <section className="popular-artist">
         {artistData.map((artist) => (

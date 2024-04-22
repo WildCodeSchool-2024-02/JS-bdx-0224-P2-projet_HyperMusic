@@ -31,6 +31,7 @@
   --album-artist-name-desktop: 1.5rem;
 
   /* Font weights */
+
   --medium: 500;
   --semi-bold: 600;
   --bold: 700;
@@ -88,13 +89,70 @@ h2 {
   margin: 0.7rem;
 }
 
-/* Popular artist section */
+/* Header & Navbar */
+
+header {
+  display: flex;
+}
+
+.topPage {
+  background-color: var(--secondary-color);
+  border-bottom: 0.1rem solid var(--primary-color);
+  width: 100%;
+  color: var(--primary-color);
+  font-size: var(--title-mobile);
+  font-family: var(--font-title);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 4rem;
+}
+
+.linkToOtherPages {
+  display: none;
+}
+
+.navBarBottom {
+  background-color: var(--secondary-color);
+  position: fixed;
+  width: 100%;
+  padding-top: 0.5rem;
+  margin-top: 0;
+  bottom: 0;
+  border-top: 0.1rem solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: var(--primary-content-mobile);
+  font-family: var(--font-content);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-items: center;
+  z-index: 1;
+}
+
+nav > a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: var(--primary-content-mobile);
+  font-family: var(--font-content);
+  width: var(--logo-mobile);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
+}
+
+/* Sections */
 
 .popular-artist {
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
 }
+
+/* Cards */
 
 .artist-card {
   margin: 0 1rem 1rem 0.5rem;
@@ -139,7 +197,63 @@ h2 {
   font-weight: var(--bold);
 }
 
+/* Footer */
+
+footer {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  padding-top: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 4.2rem;
+  color: var(--primary-color);
+  font-size: var(--primary-content-mobile);
+  font-family: var(--font-content);
+  display: flex;
+  justify-content: space-around;
+  z-index: 0;
+}
+
 @media screen and (min-width: 992px) {
+  /* Header & Navbar */
+
+  .topPage {
+    background-color: var(--secondary-color);
+    border-bottom: 0.1rem solid var(--primary-color);
+    width: 100%;
+    color: var(--primary-color);
+    font-size: var(--title-mobile);
+    font-family: var(--font-title);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topPage > h1 {
+    transform: translate(-250%);
+  }
+
+  .topPage > a {
+    display: flex;
+    padding-right: 25rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: var(--primary-content-mobile);
+    font-weight: var(--bold);
+    font-family: var(--font-content);
+  }
+
+  .topPage > a:last-child {
+    padding-right: 5rem;
+  }
+
+  .navBarBottom {
+    display: none;
+  }
+
+  /* Cards */
+
   .artist-card {
     width: var(--bg-desktop-card-width);
     height: var(--bg-desktop-card-height);
@@ -157,5 +271,31 @@ h2 {
 
   .artist-name {
     font-size: var(--primary-content-desktop);
+  }
+
+  /* Footer */
+
+  footer {
+    background-color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    padding-top: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0rem;
+    bottom: 0;
+    border-top: 0.1rem solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: var(--primary-content-mobile);
+    font-family: var(--font-content);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer > p:first-child {
+    padding-left: 2rem;
+  }
+
+  footer > p:last-child {
+    padding-right: 2rem;
   }
 }
