@@ -31,6 +31,7 @@
   --album-artist-name-desktop: 1.5rem;
 
   /* Font weights */
+
   --medium: 500;
   --semi-bold: 600;
   --bold: 700;
@@ -72,80 +73,229 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: var(--bg-gradient);
-  background-attachment: fixed;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   background: var(--bg-gradient);
   background-attachment: fixed;
 }
 
-.searchbar {
+h2 {
+  font-size: var(--title-mobile);
+  font-family: var(--font-title);
+  font-weight: var(--bold);
+  color: var(--primary-color);
+  text-shadow: var(--font-stroke);
+  margin: 0.7rem;
+}
+
+/* Header & Navbar */
+
+header {
+  display: flex;
+}
+
+.topPage {
+  background-color: var(--secondary-color);
+  border-bottom: 0.1rem solid var(--primary-color);
+  width: 100%;
+  color: var(--primary-color);
+  font-size: var(--title-mobile);
+  font-family: var(--font-title);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(var(--primary-color-rgb), var(--opacity-card));
-  border: 2px solid var(--primary-color);
-  height: 3rem;
 }
 
-.searchbarInput {
-  width: 70%;
-  height: 2.1rem;
-  padding: 10px;
-  border: 1px solid var(--primary-color);
-  border-radius: 1rem;
-  background: var(--primary-color);
+.logo {
+  height: 4rem;
 }
 
-.searchbarInput::placeholder {
-  color: var(--secondary-color);
+.linkToOtherPages {
+  display: none;
+}
+
+.navBarBottom {
+  background-color: var(--secondary-color);
+  position: fixed;
+  width: 100%;
+  padding-top: 0.5rem;
+  margin-top: 0;
+  bottom: 0;
+  border-top: 0.1rem solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: var(--primary-content-mobile);
   font-family: var(--font-content);
-  font-weight: var(--medium);
-  font-size: 0.85rem;
-}
-
-button {
-  border: none;
-}
-button img {
-  width: 50px;
-  background: rgba(var(--primary-color-rgb), var(--opacity-card));
-  display: flex;
-  padding-left: 20px;
-}
-
-.albumImage {
-  width: 200px;
-  display: flex;
-  justify-content: center;
-}
-
-.cardAlbum {
-  display: flex;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
   justify-items: center;
+  z-index: 1;
 }
 
-.albumName {
-  font-size: 30px;
+nav > a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: var(--primary-content-mobile);
   font-family: var(--font-content);
+  width: var(--logo-mobile);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
 }
 
-label {
-  font-size: 0px;
+/* Sections */
+
+.popular-artist {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+/* Cards */
+
+.artist-card {
+  margin: 0 1rem 1rem 0.5rem;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: var(--bg-mobile-card-width);
+  height: var(--bg-mobile-card-height);
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.artist-picture {
+  width: var(--img-mobile-card);
+  height: var(--img-mobile-card);
+  border-radius: 50%;
+  border: var(--border-img-card) solid var(--secondary-color);
+  box-shadow: var(--outside-shadow);
+  place-self: center;
+}
+
+.artist-desc {
+  background: var(--primary-color-rgb);
+  font-family: var(--font-content);
+  color: var(--secondary-color);
+  font-size: var(--secondary-content-mobile);
+  font-weight: var(--medium);
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0.3rem;
+  padding-bottom: 0.4rem;
+  padding-right: 0.1rem;
+  white-space: normal;
+}
+
+.artist-name {
+  background: var(--primary-color-rgb);
+  font-size: var(--primary-content-mobile);
+  font-weight: var(--bold);
+}
+
+/* Footer */
+
+footer {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  padding-top: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 4.2rem;
+  color: var(--primary-color);
+  font-size: var(--primary-content-mobile);
+  font-family: var(--font-content);
+  display: flex;
+  justify-content: space-around;
+  z-index: 0;
 }
 
 @media screen and (min-width: 992px) {
-  .searchbarInput {
-    width: 40%;
+  /* Header & Navbar */
+
+  .topPage {
+    background-color: var(--secondary-color);
+    border-bottom: 0.1rem solid var(--primary-color);
+    width: 100%;
+    color: var(--primary-color);
+    font-size: var(--title-mobile);
+    font-family: var(--font-title);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .searchbarInput::placeholder {
-    font-size: 1rem;
+  .topPage > h1 {
+    transform: translate(-250%);
+  }
+
+  .topPage > a {
+    display: flex;
+    padding-right: 25rem;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: var(--primary-content-mobile);
+    font-weight: var(--bold);
+    font-family: var(--font-content);
+  }
+
+  .topPage > a:last-child {
+    padding-right: 5rem;
+  }
+
+  .navBarBottom {
+    display: none;
+  }
+
+  /* Cards */
+
+  .artist-card {
+    width: var(--bg-desktop-card-width);
+    height: var(--bg-desktop-card-height);
+  }
+
+  .artist-desc {
+    width: var(--img-desktop-card);
+    height: var(--img-desktop-card);
+    margin: 0 0.8rem 0 0.8rem;
+  }
+
+  .artist-card > figcaption {
+    font-size: var(--secondary-content-desktop);
+  }
+
+  .artist-name {
+    font-size: var(--primary-content-desktop);
+  }
+
+  /* Footer */
+
+  footer {
+    background-color: var(--secondary-color);
+    position: fixed;
+    width: 100%;
+    padding-top: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0rem;
+    bottom: 0;
+    border-top: 0.1rem solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: var(--primary-content-mobile);
+    font-family: var(--font-content);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer > p:first-child {
+    padding-left: 2rem;
+  }
+
+  footer > p:last-child {
+    padding-right: 2rem;
   }
 }
