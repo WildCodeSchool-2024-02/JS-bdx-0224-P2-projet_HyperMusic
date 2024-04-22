@@ -189,8 +189,7 @@ button {
 }
 
 button img {
-  width: 34px;
-  /* background: rgba(var(--primary-color-rgb), var(--opacity-card)); */
+  width: 50px;
   display: flex;
   padding-left: 20px;
 }
@@ -221,7 +220,7 @@ label {
 
 .topPage {
   background-color: var(--secondary-color);
-  /* border-bottom: 0.1rem solid var(--primary-color); */
+  border-bottom: 0.1rem solid var(--primary-color);
   width: 100%;
   color: var(--primary-color);
   font-size: var(--title-mobile);
