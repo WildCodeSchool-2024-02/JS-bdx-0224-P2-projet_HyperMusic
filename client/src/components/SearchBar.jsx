@@ -32,18 +32,14 @@ function SearchBar({ searchResult }) {
         onKeyDown={handleKeyPress}
       />
       <button type="button" onClick={handleSearch}>
-        <img
-          src="..\src\assets\images\icons8-chercher (1).svg"
-          className="searchbarIcon"
-          alt="Result"
-        />
+        <img src="..\src\assets\images\icons8-chercher (1).svg" alt="Result" />
       </button>
     </section>
   );
 }
 
 SearchBar.propTypes = {
-  searchResult: PropTypes.func.isRequired,
+  searchResult: PropTypes.isRequired,
 };
 
 export default SearchBar;
