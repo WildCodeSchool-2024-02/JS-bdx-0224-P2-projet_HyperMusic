@@ -1,7 +1,9 @@
 import "../App.css";
+import { useParams } from "react-router-dom";
 
 function AlbumPage() {
-  return <p>Album page</p>;
+  const params = useParams();
+  return <h2>Album : {params}</h2>;
 }
 
 export default AlbumPage;

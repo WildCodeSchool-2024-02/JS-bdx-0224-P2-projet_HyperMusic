@@ -1,7 +1,7 @@
 import "../App.css";
 
 function Discovery() {
-  return <p>Discovery page</p>;
+  return <h2>Discovery page</h2>;
 }
 
 export default Discovery;

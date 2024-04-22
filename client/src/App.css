@@ -54,7 +54,7 @@
   --bg-desktop-card-width: 17.5rem;
   --bg-desktop-card-height: 9.375rem;
   --img-mobile-card: 5rem;
-  --img-desktop-card: 8.125rem;
+  --img-desktop-card: 7rem;
   --border-card: 0.063rem;
   --border-img-card: 0.031rem;
   --border-artist-mobile: 0.125rem;
@@ -89,15 +89,139 @@ h2 {
   margin: 0.7rem;
 }
 
-/* Header & Navbar */
+/* HomePage sections & Cards */
 
-header {
+.popular-artist,
+.best-album,
+.team-choice {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.artist-card,
+.album-card,
+.music-card {
+  margin: 0 1rem 1rem 0.5rem;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: var(--bg-mobile-card-width);
+  height: var(--bg-mobile-card-height);
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.artist-picture,
+.album-picture,
+.music-picture {
+  width: var(--img-mobile-card);
+  height: var(--img-mobile-card);
+  border-radius: 50%;
+  border: var(--border-img-card) solid var(--secondary-color);
+  box-shadow: var(--outside-shadow);
+  place-self: center;
+}
+
+.album-picture,
+.music-picture {
+  border-radius: var(--rounded);
+}
+
+.artist-desc,
+.album-desc,
+.music-desc {
+  background: var(--primary-color-rgb);
+  font-family: var(--font-content);
+  color: var(--secondary-color);
+  font-size: var(--secondary-content-mobile);
+  font-weight: var(--medium);
+  grid-column: 2/3;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 0.1rem;
+  white-space: normal;
+}
+
+.artist-desc {
+  padding-bottom: 0.4rem;
+}
+
+.artist-name {
+  background: var(--primary-color-rgb);
+  font-size: var(--primary-content-mobile);
+  font-weight: var(--bold);
+}
+
+/* SearchPage */
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border: 2px solid var(--primary-color);
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.searchbarInput {
+  width: 70%;
+  height: 2.1rem;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 1rem;
+  background: var(--primary-color);
+}
+
+.searchbarInput::placeholder {
+  color: var(--secondary-color);
+  font-family: var(--font-content);
+  font-weight: var(--medium);
+  font-size: 0.85rem;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+button img {
+  width: 34px;
+  /* background: rgba(var(--primary-color-rgb), var(--opacity-card)); */
+  display: flex;
+  padding-left: 20px;
+}
+
+.albumImage {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-result {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.albumName {
+  font-size: 30px;
+  font-family: var(--font-content);
+}
+
+label {
+  font-size: 0px;
 }
 
 .topPage {
   background-color: var(--secondary-color);
-  border-bottom: 0.1rem solid var(--primary-color);
+  /* border-bottom: 0.1rem solid var(--primary-color); */
   width: 100%;
   color: var(--primary-color);
   font-size: var(--title-mobile);
@@ -144,60 +268,9 @@ nav > a {
   margin: 0.5rem;
 }
 
-/* Sections */
-
-.popular-artist {
-  overflow-x: auto;
-  white-space: nowrap;
-  scrollbar-width: none;
+.title-404 {
+  font-size: var(--logo-desktop);
 }
-
-/* Cards */
-
-.artist-card {
-  margin: 0 1rem 1rem 0.5rem;
-  background: rgba(var(--primary-color-rgb), var(--opacity-card));
-  border-radius: var(--rounded);
-  border: var(--border-card) solid var(--primary-color);
-  box-shadow: var(--outside-shadow), var(--inner-shadow);
-  width: var(--bg-mobile-card-width);
-  height: var(--bg-mobile-card-height);
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.artist-picture {
-  width: var(--img-mobile-card);
-  height: var(--img-mobile-card);
-  border-radius: 50%;
-  border: var(--border-img-card) solid var(--secondary-color);
-  box-shadow: var(--outside-shadow);
-  place-self: center;
-}
-
-.artist-desc {
-  background: var(--primary-color-rgb);
-  font-family: var(--font-content);
-  color: var(--secondary-color);
-  font-size: var(--secondary-content-mobile);
-  font-weight: var(--medium);
-  grid-column: 2/3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 0.3rem;
-  padding-bottom: 0.4rem;
-  padding-right: 0.1rem;
-  white-space: normal;
-}
-
-.artist-name {
-  background: var(--primary-color-rgb);
-  font-size: var(--primary-content-mobile);
-  font-weight: var(--bold);
-}
-
-/* Footer */
 
 footer {
   background: rgba(255, 255, 255, 0.5);
@@ -216,7 +289,42 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
-  /* Header & Navbar */
+  h2 {
+    font-size: var(--title-desktop);
+  }
+
+  .artist-card,
+  .album-card,
+  .music-card {
+    width: var(--bg-desktop-card-width);
+    height: var(--bg-desktop-card-height);
+  }
+
+  .artist-picture,
+  .album-picture,
+  .music-picture {
+    width: var(--img-desktop-card);
+    height: var(--img-desktop-card);
+    margin: 0 0.8rem 0 0.8rem;
+  }
+
+  .artist-desc,
+  .album-desc,
+  .music-desc {
+    font-size: var(--secondary-content-desktop);
+  }
+
+  .artist-name {
+    font-size: var(--primary-content-desktop);
+  }
+
+  .searchbarInput {
+    width: 40%;
+  }
+
+  .searchbarInput::placeholder {
+    font-size: 1rem;
+  }
 
   .topPage {
     background-color: var(--secondary-color);
@@ -252,29 +360,6 @@ footer {
     display: none;
   }
 
-  /* Cards */
-
-  .artist-card {
-    width: var(--bg-desktop-card-width);
-    height: var(--bg-desktop-card-height);
-  }
-
-  .artist-desc {
-    width: var(--img-desktop-card);
-    height: var(--img-desktop-card);
-    margin: 0 0.8rem 0 0.8rem;
-  }
-
-  .artist-card > figcaption {
-    font-size: var(--secondary-content-desktop);
-  }
-
-  .artist-name {
-    font-size: var(--primary-content-desktop);
-  }
-
-  /* Footer */
-
   footer {
     background-color: var(--secondary-color);
     position: fixed;
@@ -297,5 +382,13 @@ footer {
 
   footer > p:last-child {
     padding-right: 2rem;
+  }
+
+  .searchbarInput {
+    width: 40%;
+  }
+
+  .searchbarInput::placeholder {
+    font-size: 1rem;
   }
 }
