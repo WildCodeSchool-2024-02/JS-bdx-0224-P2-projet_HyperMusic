@@ -1,5 +1,8 @@
-import "./App.css";
 import { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
+import "./App.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import ArtistCard from "./components/ArtistCard";
 import AlbumCard from "./components/AlbumCard";
 import MusicCard from "./components/MusicCard";
@@ -97,6 +100,11 @@ function App() {
 
   return (
     <>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
       <h2>Albums incontournables :</h2>
       <section className="best-album">
         {albumData.map((album) => (
