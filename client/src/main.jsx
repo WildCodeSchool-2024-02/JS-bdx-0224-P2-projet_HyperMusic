@@ -4,11 +4,32 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
+import Research from "./pages/Research";
+import Home from "./pages/Home";
+import Discovery from "./pages/Discovery";
+import Album from "./pages/AlbumPage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/research",
+        element: <Research />,
+      },
+      {
+        path: "/album",
+        element: <Album />,
+      },
+      {
+        path: "/discovery",
+        element: <Discovery />,
+      },
+    ],
   },
 ]);
 
