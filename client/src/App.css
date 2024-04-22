@@ -146,7 +146,9 @@ nav > a {
 
 /* Sections */
 
-.popular-artist {
+.popular-artist,
+.best-album,
+.team-choice {
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
@@ -154,7 +156,9 @@ nav > a {
 
 /* Cards */
 
-.artist-card {
+.artist-card,
+.album-card,
+.music-card {
   margin: 0 1rem 1rem 0.5rem;
   background: rgba(var(--primary-color-rgb), var(--opacity-card));
   border-radius: var(--rounded);
@@ -166,7 +170,9 @@ nav > a {
   grid-template-columns: 1fr 1fr;
 }
 
-.artist-picture {
+.artist-picture,
+.album-picture,
+.music-picture {
   width: var(--img-mobile-card);
   height: var(--img-mobile-card);
   border-radius: 50%;
@@ -175,23 +181,37 @@ nav > a {
   place-self: center;
 }
 
-.artist-desc {
+.album-picture,
+.music-picture {
+  border-radius: var(--rounded);
+}
+
+.artist-desc,
+.album-desc,
+.music-desc {
+  margin-top: 0.3rem;
+  padding-right: 0.2rem;
   background: var(--primary-color-rgb);
   font-family: var(--font-content);
   color: var(--secondary-color);
   font-size: var(--secondary-content-mobile);
   font-weight: var(--medium);
   grid-column: 2/3;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 0.3rem;
-  padding-bottom: 0.4rem;
-  padding-right: 0.1rem;
+  margin: auto;
   white-space: normal;
+  max-height: 6rem;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
-.artist-name {
+.artist-desc {
+  margin-left: 0.3rem;
+  padding-bottom: 0.4rem;
+}
+
+.artist-name,
+.artist-name-album,
+.artist-name-music {
   background: var(--primary-color-rgb);
   font-size: var(--primary-content-mobile);
   font-weight: var(--bold);
@@ -259,17 +279,23 @@ footer {
     height: var(--bg-desktop-card-height);
   }
 
-  .artist-desc {
+  .artist-picture,
+  .album-picture,
+  .music-picture {
     width: var(--img-desktop-card);
     height: var(--img-desktop-card);
     margin: 0 0.8rem 0 0.8rem;
   }
 
-  .artist-card > figcaption {
+  .artist-desc,
+  .album-desc,
+  .music-desc {
     font-size: var(--secondary-content-desktop);
   }
 
-  .artist-name {
+  .artist-name,
+  .artist-name-album,
+  .artist-name-music {
     font-size: var(--primary-content-desktop);
   }
 
