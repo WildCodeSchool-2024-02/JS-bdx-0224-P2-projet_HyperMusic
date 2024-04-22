@@ -216,9 +216,9 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
-    /* Header & Navbar */
-  
-    .topPage {
+  /* Header & Navbar */
+
+  .topPage {
     background-color: var(--secondary-color);
     border-bottom: 0.1rem solid var(--primary-color);
     width: 100%;
@@ -251,9 +251,9 @@ footer {
   .navBarBottom {
     display: none;
   }
-  
+
   /* Cards */
-  
+
   .artist-card {
     width: var(--bg-desktop-card-width);
     height: var(--bg-desktop-card-height);
@@ -272,10 +272,10 @@ footer {
   .artist-name {
     font-size: var(--primary-content-desktop);
   }
-  
+
   /* Footer */
-    
-    footer {
+
+  footer {
     background-color: var(--secondary-color);
     position: fixed;
     width: 100%;
