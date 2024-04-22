@@ -23,19 +23,6 @@ function Cards() {
           <p className="albumLength">50'</p> <p className="albumYear">2001</p>{" "}
         </figcaption>{" "}
       </figure>{" "}
-      <section className="infoTrack">
-        {" "}
-        <img
-          src="\src\assets\images\play_icon 48w.png"
-          alt="Bouton play"
-          className="playBtn"
-        />
-        <h4>1.</h4>{" "}
-        <p className="trackTitle">
-          <b>Track: $recupVar</b>{" "}
-        </p>
-        <p className="trackLength">4'42</p>{" "}
-      </section>{" "}
     </>
   );
 }
