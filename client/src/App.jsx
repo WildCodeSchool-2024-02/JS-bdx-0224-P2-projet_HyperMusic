@@ -1,8 +1,8 @@
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { useEffect, useState } from "react";
 import ArtistCard from "./components/ArtistCard";
 import artistIds from "./artistIds";
 
@@ -66,7 +66,6 @@ function App() {
 
   return (
     <>
-      // need to fix this with the new pages
       <Header />
       <main>
         <Outlet />
