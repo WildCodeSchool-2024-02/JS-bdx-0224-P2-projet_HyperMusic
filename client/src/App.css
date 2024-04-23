@@ -251,12 +251,13 @@ footer {
   }
 
   .topPage > h1 {
-    transform: translate(-250%);
+    position: fixed;
+    left: clamp(9.6rem, 11.52rem, 14.4rem);
   }
 
   .topPage > a {
     display: flex;
-    padding-right: 25rem;
+    padding-right: clamp(2rem, 10rem, 30rem);
     text-decoration: none;
     color: var(--primary-color);
     font-size: var(--primary-content-mobile);
