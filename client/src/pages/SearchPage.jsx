@@ -5,20 +5,20 @@ import SearchBar from "../components/SearchBar";
 import AlbumCard from "../components/AlbumCard";
 
 function SearchPage() {
-  const tokenAccess = useLoaderData();
+  const authAccess = useLoaderData();
   const [albums, setAlbums] = useState([]);
 
   async function searchAlbums(searchTerm) {
     const idResponse = await fetch(
       `https://api.spotify.com/v1/search?q=${searchTerm}&type=artist`,
-      tokenAccess
+      authAccess
     );
     const artistData = await idResponse.json();
     const artistID = artistData.artists.items[0].id;
 
     const albumsResponse = await fetch(
       `https://api.spotify.com/v1/artists/${artistID}/albums?include_groups=album&market=US&limit=50`,
-      tokenAccess
+      authAccess
     );
     const albumsData = await albumsResponse.json();
     setAlbums(albumsData.items);
