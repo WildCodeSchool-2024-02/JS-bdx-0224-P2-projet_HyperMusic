@@ -1,7 +1,7 @@
 import "../App.css";
 
 function ArtistPage() {
-  return <p>Artist page</p>;
+  return <h2>Artist page</h2>;
 }
 
 export default ArtistPage;

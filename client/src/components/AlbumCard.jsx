@@ -14,7 +14,7 @@ export default function AlbumCard({
         className="album-picture"
       />
       <figcaption className="album-desc">
-        <strong className="artist-name-album">{artistNameAlbum}</strong>
+        <strong className="artist-name">{artistNameAlbum}</strong>
         Album : {albumName} {releaseDate}
       </figcaption>
     </figure>

@@ -46,7 +46,7 @@ const artistIds = [
   "0du5cEVh5yTK9QJze8zA0C",
   "64tNsm6TnZe2zpcMVMOoHL",
   "3Ri4H12KFyu98LMjSoij5V",
-  "4MzJMcHQBl9SIYSjwWn8QW"
+  "4MzJMcHQBl9SIYSjwWn8QW",
 ];
 
 export default artistIds;

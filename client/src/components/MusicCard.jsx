@@ -9,7 +9,7 @@ export default function MusicCard({ artistNameMusic, musicName, imageMusic }) {
         className="music-picture"
       />
       <figcaption className="music-desc">
-        <strong className="artist-name-music">{artistNameMusic}</strong>
+        <strong className="artist-name">{artistNameMusic}</strong>
         Musique : {musicName}
       </figcaption>
     </figure>

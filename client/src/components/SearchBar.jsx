@@ -21,7 +21,7 @@ function SearchBar({ searchResult }) {
   return (
     <section className="searchbar">
       <label htmlFor="searchbarInput">
-        Entrez un nom d'artiste ou un album :
+        Entrez un nom d&apos;artiste ou un album :
       </label>
       <input
         type="search"
@@ -39,7 +39,7 @@ function SearchBar({ searchResult }) {
 }
 
 SearchBar.propTypes = {
-  searchResult: PropTypes.isRequired,
+  searchResult: PropTypes.func.isRequired,
 };
 
 export default SearchBar;
