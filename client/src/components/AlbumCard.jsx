@@ -1,13 +1,16 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export default function AlbumCard({
   artistNameAlbum,
   albumName,
   imageAlbum,
   releaseDate,
+  albumId,
 }) {
   return (
     <figure className="album-card">
+      <Link to={`album/${albumId}`} className="link-card" />
       <img
         src={imageAlbum}
         alt="album illustration"
@@ -26,6 +29,7 @@ AlbumCard.propTypes = {
   albumName: PropTypes.string.isRequired,
   imageAlbum: PropTypes.string.isRequired,
   releaseDate: PropTypes.string,
+  albumId: PropTypes.string.isRequired,
 };
 
 AlbumCard.defaultProps = {
