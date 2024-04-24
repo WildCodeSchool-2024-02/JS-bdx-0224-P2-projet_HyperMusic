@@ -29,6 +29,7 @@ function SearchPage() {
   return (
     <>
       <SearchBar searchResult={searchResult} />
+      <section className="search-result">
       {albums.map((album) => (
         <AlbumCard
           key={album.id}
@@ -43,6 +44,7 @@ function SearchPage() {
           releaseDate={album.releaseYear}
         />
       ))}
+      </section>
     </>
   );
 }
