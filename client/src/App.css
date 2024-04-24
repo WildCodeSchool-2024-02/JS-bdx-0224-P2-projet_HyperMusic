@@ -241,7 +241,6 @@ label {
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
-  padding-top: 0.5rem;
   margin-top: 0;
   bottom: 0;
   border-top: 0.1rem solid var(--primary-color);
@@ -270,14 +269,22 @@ nav > a {
   font-size: var(--logo-desktop);
 }
 
+.iconeNavBar {
+  padding-right: 0.25rem;
+}
+
+/* Footer */
+
 footer {
   background: rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: 100%;
   padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
   margin-top: 0;
-  margin-bottom: 4.2rem;
+  position: fixed;
+  bottom: 3.5rem;
   color: var(--primary-color);
   font-size: var(--primary-content-mobile);
   font-family: var(--font-content);
@@ -337,12 +344,13 @@ footer {
   }
 
   .topPage > h1 {
-    transform: translate(-250%);
+    position: fixed;
+    left: clamp(9.6rem, 11.52rem, 14.4rem);
   }
 
   .topPage > a {
     display: flex;
-    padding-right: 25rem;
+    padding-right: clamp(2rem, 10rem, 30rem);
     text-decoration: none;
     color: var(--primary-color);
     font-size: var(--primary-content-mobile);
