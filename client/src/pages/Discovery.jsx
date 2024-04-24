@@ -13,7 +13,7 @@ const years = [
 function Discovery() {
   const authAccess = useLoaderData();
   useEffect (() => {
-  fetch (`https://api.spotify.com/v1/recommendations?seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical%2Cacoustic&seed_tracks=0c6xIDDpzE81m2q797ordA`, authAccess)
+  fetch (`https://api.spotify.com/v1/recommendations?limit=1&seed_artists=4NHQUGzhtTLFvgF5SZesLK&seed_genres=classical%2Ccountry&seed_tracks=0c6xIDDpzE81m2q797ordA&target_danceability=1`, authAccess)
     .then(result => result.json())
     .then(data => (data))
 }, [])
