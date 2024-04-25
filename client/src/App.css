@@ -111,6 +111,7 @@ h2 {
   height: var(--bg-mobile-card-height);
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
+  position: relative;
 }
 
 .artist-picture,
@@ -155,6 +156,15 @@ h2 {
   font-weight: var(--bold);
 }
 
+.link-card {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 /* SearchPage */
 
 .searchbar {
@@ -183,12 +193,12 @@ h2 {
   font-size: 0.85rem;
 }
 
-button {
+.search-button {
   border: none;
   background: none;
 }
 
-button img {
+.search-icon {
   width: 50px;
   display: flex;
   padding-left: 20px;

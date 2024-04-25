@@ -75,6 +75,7 @@ function Home() {
             }
             imageAlbum={album.images[1].url}
             releaseDate={album.releaseYear}
+            albumId={album.id}
           />
         ))}
       </section>
@@ -86,6 +87,7 @@ function Home() {
             artistNameMusic={music.artists[0].name}
             musicName={music.name}
             imageMusic={music.album.images[1].url}
+            musicId={music.album.id}
           />
         ))}
       </section>
@@ -98,6 +100,7 @@ function Home() {
               artist.name.slice(0, 34) + (artist.name.length > 34 ? "..." : "")
             }
             imageArtist={artist.images[1].url}
+            artistId={artist.id}
           />
         ))}
       </section>
