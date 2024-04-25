@@ -9,7 +9,11 @@ function Footer() {
     <>
       <nav className="navBarBottom">
         <Link to="/">
-          <img className="iconeNavBar" src={homeSrc} alt="back to the homepage" />
+          <img
+            className="iconeNavBar"
+            src={homeSrc}
+            alt="back to the homepage"
+          />
           Home
         </Link>
         <Link to="/research">
