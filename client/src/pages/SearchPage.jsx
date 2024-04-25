@@ -42,6 +42,7 @@ function SearchPage() {
             }
             imageAlbum={album.images[0]?.url}
             releaseDate={album.releaseYear}
+            albumId={album.id}
           />
         ))}
       </section>

@@ -10,7 +10,7 @@ export default function AlbumCard({
 }) {
   return (
     <figure className="album-card">
-      <Link to={`album/${albumId}`} className="link-card" />
+      <Link to={`/album/${albumId}`} className="link-card" />
       <img
         src={imageAlbum}
         alt="album illustration"

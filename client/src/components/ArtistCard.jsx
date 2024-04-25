@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function ArtistCard({ artistName, imageArtist, artistId }) {
   return (
     <figure className="artist-card">
-      <Link to={`artist/${artistId}`} className="link-card" />
+      <Link to={`/artist/${artistId}`} className="link-card" />
       <img
         src={imageArtist}
         alt="artist illustration"
