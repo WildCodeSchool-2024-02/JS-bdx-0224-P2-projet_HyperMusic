@@ -17,7 +17,7 @@ function SearchPage() {
     const artistID = artistData.artists.items[0].id;
 
     const albumsResponse = await fetch(
-      `https://api.spotify.com/v1/artists/${artistID}/albums?include_groups=album&market=US&limit=50`,
+      `https://api.spotify.com/v1/artists/${artistID}/albums?include_groups=album&market=FR&limit=50`,
       authAccess
     );
     const albumsData = await albumsResponse.json();
@@ -30,20 +30,21 @@ function SearchPage() {
     <>
       <SearchBar searchResult={searchResult} />
       <section className="search-result">
-      {albums.map((album) => (
-        <AlbumCard
-          key={album.id}
-          artistNameAlbum={
-            album.artists[0].name.slice(0, 24) +
-            (album.artists[0].name.length > 24 ? "..." : "")
-          }
-          albumName={
-            album.name.slice(0, 26) + (album.name.length > 26 ? "..." : "")
-          }
-          imageAlbum={album.images[0]?.url}
-          releaseDate={album.releaseYear}
-        />
-      ))}
+        {albums.map((album) => (
+          <AlbumCard
+            key={album.id}
+            artistNameAlbum={
+              album.artists[0].name.slice(0, 24) +
+              (album.artists[0].name.length > 24 ? "..." : "")
+            }
+            albumName={
+              album.name.slice(0, 26) + (album.name.length > 26 ? "..." : "")
+            }
+            imageAlbum={album.images[0]?.url}
+            releaseDate={album.releaseYear}
+            albumId={album.id}
+          />
+        ))}
       </section>
     </>
   );

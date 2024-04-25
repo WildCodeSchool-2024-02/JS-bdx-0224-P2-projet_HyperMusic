@@ -1,8 +1,10 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-export default function ArtistCard({ artistName, imageArtist }) {
+export default function ArtistCard({ artistName, imageArtist, artistId }) {
   return (
     <figure className="artist-card">
+      <Link to={`/artist/${artistId}`} className="link-card" />
       <img
         src={imageArtist}
         alt="artist illustration"
@@ -18,4 +20,5 @@ export default function ArtistCard({ artistName, imageArtist }) {
 ArtistCard.propTypes = {
   artistName: PropTypes.string.isRequired,
   imageArtist: PropTypes.string.isRequired,
+  artistId: PropTypes.string.isRequired,
 };

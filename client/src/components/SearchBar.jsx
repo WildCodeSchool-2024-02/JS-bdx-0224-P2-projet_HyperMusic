@@ -31,8 +31,12 @@ function SearchBar({ searchResult }) {
         onChange={handleInputChange}
         onKeyDown={handleKeyPress}
       />
-      <button type="button" onClick={handleSearch}>
-        <img src="..\src\assets\images\icons8-chercher (1).svg" alt="Result" />
+      <button type="button" onClick={handleSearch} className="search-button">
+        <img
+          src="..\src\assets\images\icons8-chercher (1).svg"
+          alt="Result"
+          className="search-icon"
+        />
       </button>
     </section>
   );
