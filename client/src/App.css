@@ -302,6 +302,50 @@ footer {
   justify-content: space-around;
   z-index: 0;
 }
+/* Discovery page */
+
+.rules {
+  text-align: center;
+}
+
+.dropdowns {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-left: 3.5rem;
+  font-family: var(--font-content);
+}
+
+.dropdown-select {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--rounded);
+  font-family: var(--font-content);
+}
+
+.dropdown-option {
+  background-color: rgb();
+}
+
+.discoveryCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.playButton {
+  background: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-content);
+  border-radius: var(--rounded);
+  position: fixed;
+  bottom: 15rem;
+  right: 9.5rem;
+  width: 4rem;
+  height: 1.5rem;
+}
+
+.player-container {
+  display: flex;
+  justify-content: center;
+}
 
 @media screen and (min-width: 992px) {
   h2 {
@@ -406,5 +450,20 @@ footer {
 
   .searchbarInput::placeholder {
     font-size: 1rem;
+  }
+
+  /* Discovery Page */
+  .dropdowns {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 27rem;
+  }
+
+  .playButton {
+    position: fixed;
+    bottom: 11rem;
+    right: 47rem;
+    width: 4rem;
+    height: 1.5rem;
   }
 }

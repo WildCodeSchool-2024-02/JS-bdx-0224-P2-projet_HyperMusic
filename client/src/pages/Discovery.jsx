@@ -166,7 +166,7 @@ function Discovery() {
 
   useEffect(() => {
     fetch(
-      `https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl`,
+      `https://api.spotify.com/v1/tracks/2Foc5Q5nqNiosCNqttzHof`,
       authAccess
     )
       .then((result) => result.json())
@@ -181,26 +181,26 @@ function Discovery() {
   }
   return (
     <>
-      <h2>Définissez une musique et appuyez sur play </h2>
+      <h2 className="rules">Définissez une musique et appuyez sur play </h2>
       <form onSubmit={handleSubmit}>
-        <section>
+        <section className="dropdowns">
           <label>
             What type of music?
-            <select
+            <select className="dropdown-select"
               onChange={(element) => setSelectedType(element.target.value)}
             >
               {types.map((type) => (
-                <option key={type} value={type}>
+                <option key={type} value={type} className="dropdown-option">
                   {type}
                 </option>
               ))}
             </select>
           </label>
         </section>
-        <section>
+        <section className="dropdowns">
           <label>
             which mood are you in?
-            <select
+            <select className="dropdown-select"
               onChange={(element) => setSelectedMood(element.target.value)}
             >
               {moods.map((mood) => (
@@ -211,14 +211,19 @@ function Discovery() {
             </select>
           </label>
         </section>
-        <input type="submit" value="Play" />
+        <input type="submit" value="Play" className="playButton"/>
       </form>
+      <section className="discoveryCard">
       <MusicCard
         key={discoveryData.id}
         artistNameMusic={discoveryData.artists[0].name}
         musicName={discoveryData.name}
         imageMusic={discoveryData.album.images[1].url}
       />
+      </section>
+      <section className="player-container">
+      <audio className="Player" controls src={discoveryData.preview_url} type="audio/mpeg" ><track kind="captions"/></audio>
+      </section>
     </>
   );
 }
