@@ -178,7 +178,7 @@ function Discovery() {
 
   if (Loading) {
     return <h2>Loading...</h2>;
-  }
+  } 
   return (
     <>
       <h2 className="rules">Définissez une musique et appuyez sur play </h2>
@@ -222,10 +222,11 @@ function Discovery() {
       />
       </section>
       <section className="player-container">
-      <audio className="Player" controls src={discoveryData.preview_url} type="audio/mpeg" ><track kind="captions"/></audio>
+        <audio className="Player" controls src={discoveryData.preview_url} type="audio/mpeg" ><track kind="captions"/></audio>
       </section>
-    </>
-  );
+      </>
+  )
 }
+
 
 export default Discovery;

@@ -466,4 +466,8 @@ footer {
     width: 4rem;
     height: 1.5rem;
   }
+
+  .player {
+    width: 30rem;
+  }
 }
