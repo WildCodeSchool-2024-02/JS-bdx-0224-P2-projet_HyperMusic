@@ -13,9 +13,9 @@
   --font-content: "Roboto", "Rubik", sans-serif;
 
   /* Font sizes */
-  --logo-mobile: 1.25rem;
+  --logo-mobile: 1.8rem;
   --logo-desktop: 2.125rem;
-  --placeholder-mobile: 0.75rem;
+  --placeholder-mobile: 0.8rem;
   --placeholder-desktop: 1.25rem;
   --title-mobile: 1rem;
   --title-desktop: 1.5rem;
@@ -80,13 +80,25 @@ body {
   background-attachment: fixed;
 }
 
+h1 {
+  font-size: var(--logo-mobile);
+  font-family: var(--font-title);
+  color: var(--primary-color);
+  padding-bottom: 0.3rem;
+  padding-right: 2rem;
+}
+
 h2 {
   font-size: var(--title-mobile);
-  font-family: var(--font-title);
+  font-family: var(--font-content);
   font-weight: var(--bold);
   color: var(--primary-color);
   text-shadow: var(--font-stroke);
   margin: 0.7rem;
+}
+
+main {
+  min-height: 82vh;
 }
 
 /* HomePage sections & Cards */
@@ -165,6 +177,10 @@ h2 {
   bottom: 0;
 }
 
+.home-first-title {
+  margin-top: 1.1rem;
+}
+
 /* SearchPage */
 
 .searchbar {
@@ -172,7 +188,7 @@ h2 {
   justify-content: center;
   align-items: center;
   background: rgba(var(--primary-color-rgb), var(--opacity-card));
-  border: 2px solid var(--primary-color);
+  border-bottom: 0.1rem solid var(--primary-color);
   height: 3rem;
   margin-bottom: 1rem;
 }
@@ -180,8 +196,7 @@ h2 {
 .searchbarInput {
   width: 70%;
   height: 2.1rem;
-  padding: 10px;
-  border: 1px solid var(--primary-color);
+  padding: 0.4rem;
   border-radius: 1rem;
   background: var(--primary-color);
 }
@@ -189,8 +204,8 @@ h2 {
 .searchbarInput::placeholder {
   color: var(--secondary-color);
   font-family: var(--font-content);
-  font-weight: var(--medium);
-  font-size: 0.85rem;
+  font-weight: var(--semi-bold);
+  font-size: var(--placeholder-mobile);
 }
 
 .search-button {
@@ -231,16 +246,15 @@ label {
   background-color: var(--secondary-color);
   border-bottom: 0.1rem solid var(--primary-color);
   width: 100%;
-  color: var(--primary-color);
-  font-size: var(--title-mobile);
-  font-family: var(--font-title);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .logo {
-  height: 4rem;
+  height: 3rem;
+  padding: 0.3rem;
+  padding-top: 0.5rem;
 }
 
 .linkToOtherPages {
@@ -251,6 +265,7 @@ label {
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
+  height: 9%;
   margin-top: 0;
   bottom: 0;
   border-top: 0.1rem solid var(--primary-color);
@@ -265,9 +280,6 @@ label {
 
 nav > a {
   text-decoration: none;
-  color: var(--primary-color);
-  font-size: var(--primary-content-mobile);
-  font-family: var(--font-content);
   width: var(--logo-mobile);
   display: flex;
   flex-direction: column;
@@ -275,32 +287,39 @@ nav > a {
   margin: 0.5rem;
 }
 
-.title-404 {
-  font-size: var(--logo-desktop);
+.navBarBottom > a:last-child,
+.navBarBottom > a:nth-last-child(2),
+.navBarBottom > a:nth-last-child(3) {
+  color: var(--primary-color);
+  font-size: var(--title-mobile);
+  font-family: var(--font-content);
+  font-weight: var(--bold);
 }
 
-.iconeNavBar {
-  padding-right: 0.25rem;
+.title-404 {
+  font-size: var(--logo-desktop);
 }
 
 /* Footer */
 
 footer {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
   width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.25rem;
-  margin-top: 0;
-  position: fixed;
-  bottom: 3.5rem;
+  padding: 0.3rem;
+  margin-bottom: 3.7rem;
   color: var(--primary-color);
   font-size: var(--primary-content-mobile);
   font-family: var(--font-content);
   display: flex;
   justify-content: space-around;
   z-index: 0;
+  text-shadow: var(--font-stroke);
+}
+
+footer > p {
+  font-size: var(--secondary-content-mobile);
+  font-family: var(--font-content);
+  font-weight: var(--bold);
 }
 
 @media screen and (min-width: 992px) {
@@ -345,31 +364,30 @@ footer {
     background-color: var(--secondary-color);
     border-bottom: 0.1rem solid var(--primary-color);
     width: 100%;
-    color: var(--primary-color);
-    font-size: var(--title-mobile);
-    font-family: var(--font-title);
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
   }
 
-  .topPage > h1 {
-    position: fixed;
-    left: clamp(9.6rem, 11.52rem, 14.4rem);
+  h1 {
+    font-size: var(--logo-desktop);
+  }
+
+  .logo {
+    height: 3.5rem;
   }
 
   .topPage > a {
     display: flex;
-    padding-right: clamp(2rem, 10rem, 30rem);
     text-decoration: none;
     color: var(--primary-color);
-    font-size: var(--primary-content-mobile);
+    font-size: var(--title-desktop);
     font-weight: var(--bold);
     font-family: var(--font-content);
   }
 
-  .topPage > a:last-child {
-    padding-right: 5rem;
+  .linkToOtherPages {
+    margin: auto;
   }
 
   .navBarBottom {
@@ -378,18 +396,18 @@ footer {
 
   footer {
     background-color: var(--secondary-color);
-    position: fixed;
     width: 100%;
     padding-top: 0.5rem;
-    margin-top: 0;
+    margin-top: 1rem;
     margin-bottom: 0rem;
     bottom: 0;
     border-top: 0.1rem solid var(--primary-color);
-    color: var(--primary-color);
-    font-size: var(--primary-content-mobile);
-    font-family: var(--font-content);
     display: flex;
     justify-content: space-between;
+  }
+
+  footer > p {
+    font-size: var(--secondary-content-desktop);
   }
 
   footer > p:first-child {
@@ -398,6 +416,10 @@ footer {
 
   footer > p:last-child {
     padding-right: 2rem;
+  }
+
+  main {
+    min-height: 81.8vh;
   }
 
   .searchbarInput {

@@ -26,7 +26,7 @@ function SearchBar({ searchResult }) {
       <input
         type="search"
         className="searchbarInput"
-        placeholder="Rechercher une musique, un artiste..."
+        placeholder="What do you want to listen to ?"
         value={searchTerm}
         onChange={handleInputChange}
         onKeyDown={handleKeyPress}

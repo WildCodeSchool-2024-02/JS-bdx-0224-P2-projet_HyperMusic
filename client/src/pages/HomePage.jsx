@@ -61,7 +61,7 @@ function Home() {
   }, []);
   return (
     <>
-      <h2>Albums incontournables :</h2>
+      <h2 className="home-first-title">Best albums :</h2>
       <section className="best-album">
         {albumData.map((album) => (
           <AlbumCard
@@ -79,7 +79,7 @@ function Home() {
           />
         ))}
       </section>
-      <h2>Le choix de l&apos;équipe :</h2>
+      <h2>Team choice :</h2>
       <section className="team-choice">
         {musicData.map((music) => (
           <MusicCard
@@ -91,7 +91,7 @@ function Home() {
           />
         ))}
       </section>
-      <h2>Artistes à succès :</h2>
+      <h2>Popular artists :</h2>
       <section className="popular-artist">
         {artistData.map((artist) => (
           <ArtistCard

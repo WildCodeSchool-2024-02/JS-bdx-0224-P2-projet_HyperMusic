@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className="topPage">
-      <Link to="/">
+      <Link to="/" className="link-logo">
         <img
           className="logo"
           src="src/assets/images/Melody-Find-removebg-preview 3.png"
