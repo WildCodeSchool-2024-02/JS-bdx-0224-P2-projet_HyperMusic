@@ -9,7 +9,17 @@ import artistIds from "../artistIds";
 import albumIds from "../albumIds";
 import musicIds from "../musicIds";
 
-const getOnlyYear = (dateString) => `(${dateString.split("-")[0]})`;
+export const getOnlyYear = (dateString) => `(${dateString.split("-")[0]})`;
+
+export const truncateText = (text, maxLength) => {
+  if (text.length <= maxLength) {
+    return text;
+  }
+  const lastSpaceIndex = text.lastIndexOf(" ");
+  let truncatedText = text.slice(0, lastSpaceIndex);
+  truncatedText += "...";
+  return truncatedText;
+};
 
 function Home() {
   const authAccess = useLoaderData();
@@ -66,13 +76,8 @@ function Home() {
         {albumData.map((album) => (
           <AlbumCard
             key={album.id}
-            artistNameAlbum={
-              album.artists[0].name.slice(0, 24) +
-              (album.artists[0].name.length > 24 ? "..." : "")
-            }
-            albumName={
-              album.name.slice(0, 26) + (album.name.length > 26 ? "..." : "")
-            }
+            artistNameAlbum={truncateText(album.artists[0].name, 24)}
+            albumName={truncateText(album.name, 26)}
             imageAlbum={album.images[1].url}
             releaseDate={album.releaseYear}
             albumId={album.id}
@@ -96,9 +101,7 @@ function Home() {
         {artistData.map((artist) => (
           <ArtistCard
             key={artist.id}
-            artistName={
-              artist.name.slice(0, 34) + (artist.name.length > 34 ? "..." : "")
-            }
+            artistName={truncateText(artist.name, 34)}
             imageArtist={artist.images[1].url}
             artistId={artist.id}
           />

@@ -33,7 +33,7 @@ function SearchBar({ searchResult }) {
       />
       <button type="button" onClick={handleSearch} className="search-button">
         <img
-          src="..\src\assets\images\icons8-chercher (1).svg"
+          src="..\src\assets\images\icons8-search.svg"
           alt="Result"
           className="search-icon"
         />

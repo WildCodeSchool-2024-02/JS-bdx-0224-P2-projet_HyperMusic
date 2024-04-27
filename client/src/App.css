@@ -85,7 +85,6 @@ h1 {
   font-family: var(--font-title);
   color: var(--primary-color);
   padding-bottom: 0.3rem;
-  padding-right: 2rem;
 }
 
 h2 {
@@ -156,6 +155,8 @@ main {
   justify-content: center;
   padding-right: 0.1rem;
   white-space: normal;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .artist-desc {
@@ -199,6 +200,7 @@ main {
   padding: 0.4rem;
   border-radius: 1rem;
   background: var(--primary-color);
+  position: relative;
 }
 
 .searchbarInput::placeholder {
@@ -206,6 +208,10 @@ main {
   font-family: var(--font-content);
   font-weight: var(--semi-bold);
   font-size: var(--placeholder-mobile);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.7rem;
 }
 
 .search-button {
@@ -215,7 +221,6 @@ main {
 
 .search-icon {
   width: 50px;
-  display: flex;
   padding-left: 20px;
 }
 
@@ -225,9 +230,18 @@ main {
   justify-content: center;
 }
 
+.title-search-result {
+  margin: 1rem;
+}
+
+.search-result-container {
+  display: flex;
+}
+
 .search-result {
+  margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
@@ -253,8 +267,7 @@ label {
 
 .logo {
   height: 3rem;
-  padding: 0.3rem;
-  padding-top: 0.5rem;
+  padding: 0.5rem 0.5rem 0.3rem 0.3rem;
 }
 
 .linkToOtherPages {
@@ -300,6 +313,23 @@ nav > a {
   font-size: var(--logo-desktop);
 }
 
+.title-waiting-choice,
+.subtitle-waiting-choice {
+  text-align: center;
+  margin: 2rem;
+}
+
+.subtitle-waiting-choice {
+  font-size: var(--secondary-content-mobile);
+}
+
+.img-waiting-choice {
+  display: block;
+  margin: auto;
+  margin-top: 3rem;
+  width: 15rem;
+}
+
 /* Footer */
 
 footer {
@@ -323,8 +353,16 @@ footer > p {
 }
 
 @media screen and (min-width: 992px) {
+  main {
+    min-height: 90vh;
+  }
+
   h2 {
     font-size: var(--title-desktop);
+  }
+
+  .home-first-title {
+    margin-top: 1.5rem;
   }
 
   .artist-card,
@@ -352,33 +390,29 @@ footer > p {
     font-size: var(--primary-content-desktop);
   }
 
-  .searchbarInput {
-    width: 40%;
-  }
-
-  .searchbarInput::placeholder {
-    font-size: 1rem;
-  }
-
   .topPage {
     background-color: var(--secondary-color);
     border-bottom: 0.1rem solid var(--primary-color);
     width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 9% 24% repeat(2, 1fr);
   }
 
   h1 {
     font-size: var(--logo-desktop);
+    grid-column: 2/3;
+    grid-row: 1/2;
   }
 
-  .logo {
+  .link-logo {
     height: 3.5rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
   }
 
   .topPage > a {
-    display: flex;
+    display: block;
+    margin: auto;
     text-decoration: none;
     color: var(--primary-color);
     font-size: var(--title-desktop);
@@ -386,12 +420,12 @@ footer > p {
     font-family: var(--font-content);
   }
 
-  .linkToOtherPages {
-    margin: auto;
-  }
-
   .navBarBottom {
     display: none;
+  }
+
+  .search-result {
+    grid-template-columns: repeat(3, 20rem);
   }
 
   footer {
@@ -416,10 +450,6 @@ footer > p {
 
   footer > p:last-child {
     padding-right: 2rem;
-  }
-
-  main {
-    min-height: 81.8vh;
   }
 
   .searchbarInput {
