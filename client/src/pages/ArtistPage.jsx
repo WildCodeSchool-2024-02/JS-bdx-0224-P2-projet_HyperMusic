@@ -69,7 +69,7 @@ function ArtistPage() {
           alt="illustration artist"
         />
       </section>
-      <h2>Albums et EPs</h2>
+      <h2>Albums & EPs</h2>
       <section className="best-album">
         {albumArtistData.items &&
           albumArtistData.items.map((album) => (
