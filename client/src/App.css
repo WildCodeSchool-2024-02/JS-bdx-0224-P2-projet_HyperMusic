@@ -406,11 +406,15 @@ footer {
   text-shadow: var(--font-stroke);
 }
 
-footer > p {
+footer > p,
+.footerP {
   font-size: var(--secondary-content-mobile);
   font-family: var(--font-content);
   font-weight: var(--bold);
+  text-decoration: none;
+  color: var(--primary-color);
 }
+
 /* Discovery page */
 
 .rules {
