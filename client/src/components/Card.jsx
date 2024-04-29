@@ -1,4 +1,3 @@
-
 import PropTypes from "prop-types";
 
 export default function Card({
@@ -7,29 +6,21 @@ export default function Card({
   imageMusic,
   albumTitle,
   albumYear,
-
 }) {
   return (
-  <figure className="alPageCard">
-    <img
-      src={imageMusic}
-      alt="artist illustration"
-      className="albumIMG"
-    />
-    <figcaption className="alPageDesc">
-      <h4 className="artist-name">
-        <strong>{artistNameAlbum}</strong><br/>
-      </h4>
-      <h5>
-        Album: {albumName}
-        </h5>
-      <h4 className="alPageTitle">
-        {albumTitle}
+    <figure className="alPageCard">
+      <img src={imageMusic} alt="artist illustration" className="albumIMG" />
+      <figcaption className="alPageDesc">
+        <h4 className="artist-name">
+          <strong>{artistNameAlbum}</strong>
+          <br />
         </h4>
-      <p>{albumYear}</p>
-    </figcaption>
-  </figure>
-) 
+        <h5>Album: {albumName}</h5>
+        <h4 className="alPageTitle">{albumTitle}</h4>
+        <p>{albumYear}</p>
+      </figcaption>
+    </figure>
+  );
 }
 
 Card.propTypes = {
