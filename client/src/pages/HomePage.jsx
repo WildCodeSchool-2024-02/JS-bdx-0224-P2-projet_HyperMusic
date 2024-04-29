@@ -91,7 +91,7 @@ function Home() {
           <MusicCard
             key={music.id}
             artistNameMusic={music.artists[0].name}
-            musicName={music.name}
+            musicName={truncateText(music.name, 30)}
             imageMusic={music.album.images[1].url}
             musicId={music.album.id}
           />

@@ -415,13 +415,13 @@ footer > p {
 
 .rules {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 2rem;
 }
 
 .dropdowns {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
   margin-top: 1rem;
-  margin-left: 3.5rem;
   font-family: var(--font-content);
 }
 
@@ -438,20 +438,24 @@ footer > p {
 .discoveryCard {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .playButton {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.8);
   font-family: var(--font-content);
   border-radius: var(--rounded);
-  width: 4rem;
+  width: 8rem;
   height: 1.5rem;
+  display: block;
+  margin: auto;
+  margin-top: 0.9rem;
 }
 
 .player-container {
   display: flex;
   justify-content: center;
+  margin: 1rem;
 }
 
 @media screen and (min-width: 992px) {
@@ -565,28 +569,28 @@ footer > p {
   /* Discovery Page */
 
   .dropdowns-form {
-    display: flex;
-    justify-content: center;
-  }
-
-  .dropdowns {
-    margin: auto;
-    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .dropdown-select {
-    display: block;
-    margin: auto;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    place-self: center;
   }
 
   .playButton {
-    display: block;
-    margin: auto;
-    margin-top: 3rem;
     width: 10rem;
-    height: 3rem;
+    height: 2.5rem;
     font-size: var(--font-content);
+    place-self: center;
+  }
+
+  .player-container {
+    margin-top: 2rem;
+  }
+
+  .discoveryCard {
+    margin-top: 3.5rem;
   }
 }
