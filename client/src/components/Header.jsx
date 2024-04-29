@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
+import logoSrc from "../assets/images/Melody-Find-removebg-preview 3.png";
 
 function Header() {
   return (
     <header className="topPage">
       <Link to="/">
-        <img
-          className="logo"
-          src="src/assets/images/Melody-Find-removebg-preview 3.png"
-          alt="back to the homepage"
-        />
+        <img className="logo" src={logoSrc} alt="back to the homepage" />
       </Link>
       <h1>Hypermusic</h1>
       <Link to="/research" className="linkToOtherPages">

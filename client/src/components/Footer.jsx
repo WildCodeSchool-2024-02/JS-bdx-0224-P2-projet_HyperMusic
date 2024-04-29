@@ -1,19 +1,14 @@
 import { Link } from "react-router-dom";
-
-const homeSrc = "src/assets/images/Home.svg";
-const researchSrc = "src/assets/images/Search.svg";
-const discoverySrc = "src/assets/images/Shuffle.svg";
+import homeSrc from "../assets/images/Home.svg";
+import researchSrc from "../assets/images/Search.svg";
+import discoverySrc from "../assets/images/Shuffle.svg";
 
 function Footer() {
   return (
     <>
       <nav className="navBarBottom">
         <Link to="/">
-          <img
-            className="iconeNavBar"
-            src={homeSrc}
-            alt="back to the homepage"
-          />
+          <img className="iconeNavBar" src={homeSrc} alt="back to the homepage" />
           Home
         </Link>
         <Link to="/research">

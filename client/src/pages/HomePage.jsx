@@ -9,7 +9,7 @@ import artistIds from "../artistIds";
 import albumIds from "../albumIds";
 import musicIds from "../musicIds";
 
-const getOnlyYear = (dateString) => `(${dateString.split("-")[0]})`;
+export const getOnlyYear = (dateString) => `(${dateString.split("-")[0]})`;
 
 function Home() {
   const authAccess = useLoaderData();
