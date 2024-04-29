@@ -337,6 +337,10 @@ footer {
   z-index: 0;
 }
 
+.footerP {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 992px) {
   h2 {
     font-size: var(--title-desktop);

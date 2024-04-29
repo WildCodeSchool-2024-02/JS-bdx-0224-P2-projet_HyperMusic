@@ -8,7 +8,11 @@ function Footer() {
     <>
       <nav className="navBarBottom">
         <Link to="/">
-          <img className="iconeNavBar" src={homeSrc} alt="back to the homepage" />
+          <img
+            className="iconeNavBar"
+            src={homeSrc}
+            alt="back to the homepage"
+          />
           Home
         </Link>
         <Link to="/research">
@@ -29,7 +33,10 @@ function Footer() {
         </Link>
       </nav>
       <footer>
-        <p>Terms of use</p>
+        <Link to="/CGU" className="footerP">
+          {" "}
+          <p>Terms of use</p>
+        </Link>
         <p>Contact</p>
         <p>About us</p>
       </footer>

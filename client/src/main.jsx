@@ -11,6 +11,7 @@ import ArtistPage from "./pages/ArtistPage";
 import Discovery from "./pages/Discovery";
 import NotFoundPage from "./pages/NotFoundPage";
 import fetchAccessToken from "./fetchAccessToken";
+import TermsOfUse from "./pages/TermsOfUse";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,15 @@ const router = createBrowserRouter([
       {
         path: "/discovery",
         element: <Discovery />,
+        errorElement: <NotFoundPage />,
+        loader() {
+          const authAccess = fetchAccessToken();
+          return authAccess;
+        },
+      },
+      {
+        path: "/CGU",
+        element: <TermsOfUse />,
         errorElement: <NotFoundPage />,
         loader() {
           const authAccess = fetchAccessToken();
