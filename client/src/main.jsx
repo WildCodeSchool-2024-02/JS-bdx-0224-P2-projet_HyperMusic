@@ -67,10 +67,7 @@ const router = createBrowserRouter([
         path: "/CGU",
         element: <TermsOfUse />,
         errorElement: <NotFoundPage />,
-        loader() {
-          const authAccess = fetchAccessToken();
-          return authAccess;
-        },
+        loader() {},
       },
     ],
   },
