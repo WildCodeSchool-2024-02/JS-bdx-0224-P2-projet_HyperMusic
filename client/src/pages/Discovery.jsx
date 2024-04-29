@@ -2,6 +2,7 @@ import "../App.css";
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import MusicCard from "../components/MusicCard";
+import { truncateText } from "./HomePage";
 
 const types = [
   "acoustic",
@@ -213,7 +214,7 @@ function Discovery() {
         <MusicCard
           key={discoveryData.id}
           artistNameMusic={discoveryData.artists[0].name}
-          musicName={discoveryData.name}
+          musicName={truncateText(discoveryData.name, 30)}
           imageMusic={discoveryData.album.images[1].url}
           musicId={discoveryData.album.id}
         />
