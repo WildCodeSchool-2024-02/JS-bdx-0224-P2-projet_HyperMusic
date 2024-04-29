@@ -39,7 +39,6 @@ function ArtistPage() {
       .then((data) => {
         setSingleArtistData(data);
         setLoading(false);
-        console.info(data);
       })
       .catch((error) => {
         console.error("Error fetching artist data:", error);
@@ -104,6 +103,7 @@ function ArtistPage() {
               imageAlbum={album.images[1].url}
               releaseDate={album.releaseYear}
               albumId={album.id}
+              albumType="Album"
             />
           ))}
       </section>
@@ -123,6 +123,7 @@ function ArtistPage() {
               }
               imageAlbum={single.album.images[1].url}
               albumId={single.album.id}
+              albumType="Single"
             />
           ))}
       </section>

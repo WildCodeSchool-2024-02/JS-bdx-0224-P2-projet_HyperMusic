@@ -81,6 +81,7 @@ function Home() {
             imageAlbum={album.images[1].url}
             releaseDate={album.releaseYear}
             albumId={album.id}
+            albumType="Album"
           />
         ))}
       </section>
