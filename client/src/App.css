@@ -256,6 +256,36 @@ label {
   font-size: 0px;
 }
 
+/* ArtistPage */
+
+.album-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+.artist-page-image {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: 13rem;
+  height: 10rem;
+}
+
+.artist-page-album-card .artist-page-link-card .artist-page-album-picture {
+  border-radius: 50%;
+}
+
+.artist-page-artist-name {
+  font-size: 2rem;
+}
+
 .topPage {
   background-color: var(--secondary-color);
   border-bottom: 0.1rem solid var(--primary-color);
@@ -381,6 +411,48 @@ footer > p {
   font-family: var(--font-content);
   font-weight: var(--bold);
 }
+/* Discovery page */
+
+.rules {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.dropdowns {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-left: 3.5rem;
+  font-family: var(--font-content);
+}
+
+.dropdown-select {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--rounded);
+  font-family: var(--font-content);
+}
+
+.dropdown-option {
+  background-color: rgb();
+}
+
+.discoveryCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.playButton {
+  background: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-content);
+  border-radius: var(--rounded);
+  width: 4rem;
+  height: 1.5rem;
+}
+
+.player-container {
+  display: flex;
+  justify-content: center;
+}
 
 @media screen and (min-width: 992px) {
   main {
@@ -488,5 +560,33 @@ footer > p {
 
   .searchbarInput::placeholder {
     font-size: 1rem;
+  }
+
+  /* Discovery Page */
+
+  .dropdowns-form {
+    display: flex;
+    justify-content: center;
+  }
+
+  .dropdowns {
+    margin: auto;
+    margin-top: 1.5rem;
+  }
+
+  .dropdown-select {
+    display: block;
+    margin: auto;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .playButton {
+    display: block;
+    margin: auto;
+    margin-top: 3rem;
+    width: 10rem;
+    height: 3rem;
+    font-size: var(--font-content);
   }
 }

@@ -9,7 +9,7 @@ export default function MusicCard({
 }) {
   return (
     <figure className="music-card">
-      <Link to={`album/${musicId}`} className="link-card" />
+      <Link to={`/album/${musicId}`} className="link-card" />
       <img
         src={imageMusic}
         alt="music illustration"

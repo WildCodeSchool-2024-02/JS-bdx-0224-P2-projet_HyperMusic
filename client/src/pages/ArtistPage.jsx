@@ -18,8 +18,7 @@ function ArtistPage() {
       .then((data) => {
         setArtistData(data);
         setLoading(false);
-      })
-    
+      });
 
     fetch(`https://api.spotify.com/v1/artists/${artistId}/albums`, authAccess)
       .then((result) => result.json())
@@ -30,8 +29,37 @@ function ArtistPage() {
         }));
         setAlbumArtistData({ items: albumWithYear });
         setLoading(false);
-      })
+      });
 
+    fetch(
+      `https://api.spotify.com/v1/artists/${artistId}/top-tracks`,
+      authAccess
+    )
+      .then((result) => result.json())
+      .then((data) => {
+        setSingleArtistData(data);
+        setLoading(false);
+        console.info(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching artist data:", error);
+        setLoading(false);
+      });
+    fetch(`https://api.spotify.com/v1/artists/${artistId}/albums`, authAccess)
+      .then((result) => result.json())
+      .then((data) => {
+        console.info(data);
+        const albumWithYear = data.items.map((album) => ({
+          ...album,
+          releaseYear: getOnlyYear(album.release_date),
+        }));
+        setAlbumArtistData({ items: albumWithYear });
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching album artist data:", error);
+        setLoading(false);
+      });
     fetch(
       `https://api.spotify.com/v1/artists/${artistId}/top-tracks`,
       authAccess
@@ -101,5 +129,4 @@ function ArtistPage() {
     </>
   );
 }
-
 export default ArtistPage;
