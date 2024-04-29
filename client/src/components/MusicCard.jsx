@@ -17,7 +17,7 @@ export default function MusicCard({
       />
       <figcaption className="music-desc">
         <strong className="artist-name">{artistNameMusic}</strong>
-        Musique : {musicName}
+        Music : {musicName}
       </figcaption>
     </figure>
   );

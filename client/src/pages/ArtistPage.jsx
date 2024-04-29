@@ -11,12 +11,35 @@ function ArtistPage() {
   const [loading, setLoading] = useState(true);
   const [albumArtistData, setAlbumArtistData] = useState({ items: [] });
   const [singleArtistData, setSingleArtistData] = useState({ tracks: [] });
+
   useEffect(() => {
     fetch(`https://api.spotify.com/v1/artists/${artistId}`, authAccess)
       .then((result) => result.json())
       .then((data) => {
         setArtistData(data);
         setLoading(false);
+      });
+
+    fetch(`https://api.spotify.com/v1/artists/${artistId}/albums`, authAccess)
+      .then((result) => result.json())
+      .then((data) => {
+        const albumWithYear = data.items.map((album) => ({
+          ...album,
+          releaseYear: getOnlyYear(album.release_date),
+        }));
+        setAlbumArtistData({ items: albumWithYear });
+        setLoading(false);
+      });
+
+    fetch(
+      `https://api.spotify.com/v1/artists/${artistId}/top-tracks`,
+      authAccess
+    )
+      .then((result) => result.json())
+      .then((data) => {
+        setSingleArtistData(data);
+        setLoading(false);
+        console.info(data);
       })
       .catch((error) => {
         console.error("Error fetching artist data:", error);
@@ -65,7 +88,7 @@ function ArtistPage() {
           alt="illustration artist"
         />
       </section>
-      <h2>Albums et EPs</h2>
+      <h2>Albums & EPs</h2>
       <section className="best-album">
         {albumArtistData.items &&
           albumArtistData.items.map((album) => (

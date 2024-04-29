@@ -26,14 +26,14 @@ function SearchBar({ searchResult }) {
       <input
         type="search"
         className="searchbarInput"
-        placeholder="Rechercher une musique, un artiste..."
+        placeholder="What do you want to listen to ?"
         value={searchTerm}
         onChange={handleInputChange}
         onKeyDown={handleKeyPress}
       />
       <button type="button" onClick={handleSearch} className="search-button">
         <img
-          src="..\src\assets\images\icons8-chercher (1).svg"
+          src="..\src\assets\images\icons8-search.svg"
           alt="Result"
           className="search-icon"
         />
