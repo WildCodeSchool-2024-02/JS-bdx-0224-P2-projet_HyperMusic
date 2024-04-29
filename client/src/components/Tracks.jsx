@@ -1,10 +1,9 @@
-
 import PropTypes from "prop-types";
 
 export default function Tracks({ trackName, musicLength, trackNumber }) {
   return (
     <figure className="infoTrack">
-      <p className="trackPosition">{trackNumber}.</p> {" "}
+      <p className="trackPosition">{trackNumber}.</p>{" "}
       <p className="trackTitle">
         <strong>{trackName}</strong>{" "}
       </p>
