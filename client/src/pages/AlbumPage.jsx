@@ -24,7 +24,7 @@ export default function AlbumPage() {
   }
   return (
     <>
-      <section className="father">
+      <section className="alPageContainer">
         <Card
           imageMusic={albumData.images[1].url}
           key={albumData.id}
