@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoSrc from "../assets/images/Melody-Find-removebg-preview 3.png";
+import logoSrc from "../assets/images/Melody-Find-removebg-preview3.png";
 
 function Header() {
   return (
