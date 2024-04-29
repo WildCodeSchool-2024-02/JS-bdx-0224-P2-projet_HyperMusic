@@ -32,7 +32,6 @@
 
   /* Font weights */
 
-  --normal: 400;
   --medium: 500;
   --semi-bold: 600;
   --bold: 700;
@@ -412,60 +411,10 @@ footer > p {
   font-family: var(--font-content);
   font-weight: var(--bold);
 }
-/* Discovery page */
 
-.rules {
-  text-align: center;
-  margin-top: 2rem;
-}
+/* Album Page */
 
-.dropdowns {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-  font-family: var(--font-content);
-}
-
-.dropdown-select {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: var(--rounded);
-  font-family: var(--font-content);
-}
-
-.dropdown-option {
-  background-color: rgb();
-}
-
-.discoveryCard {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-}
-
-.playButton {
-  background: rgba(255, 255, 255, 0.8);
-  font-family: var(--font-content);
-  border-radius: var(--rounded);
-  width: 8rem;
-  height: 1.5rem;
-  display: block;
-  margin: auto;
-  margin-top: 0.9rem;
-}
-
-.player-container {
-  display: flex;
-  justify-content: center;
-  margin: 1rem;
-}
-
-.footerP {
-  text-decoration: none;
-}
-
-/* Albumpage */
-
-.father {
+.alPageContainer {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -539,6 +488,7 @@ footer > p {
 .trackPosition {
   margin-left: 1rem;
 }
+
 .trackTitle {
   width: auto;
 }
@@ -548,6 +498,57 @@ footer > p {
   display: inline;
   justify-self: end;
   margin-right: 1rem;
+}
+
+/* Discovery page */
+
+.rules {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-family: var(--font-content);
+}
+
+.dropdown-select {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--rounded);
+  font-family: var(--font-content);
+}
+
+.dropdown-option {
+  background-color: rgb();
+}
+
+.discoveryCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.playButton {
+  background: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-content);
+  border-radius: var(--rounded);
+  width: 8rem;
+  height: 1.5rem;
+  display: block;
+  margin: auto;
+  margin-top: 0.9rem;
+}
+
+.player-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.footerP {
+  text-decoration: none;
 }
 
 @media screen and (min-width: 992px) {
@@ -568,10 +569,35 @@ footer > p {
   .music-card {
     width: var(--bg-desktop-card-width);
     height: var(--bg-desktop-card-height);
-    width: 100%;
-    display: flex;
-    justify-content: center;
   }
+
+  .artist-picture,
+  .album-picture,
+  .music-picture {
+    width: var(--img-desktop-card);
+    height: var(--img-desktop-card);
+    margin: 0 0.8rem 0 0.8rem;
+  }
+
+  .artist-desc,
+  .album-desc,
+  .music-desc {
+    font-size: var(--secondary-content-desktop);
+  }
+
+  .artist-name {
+    font-size: var(--primary-content-desktop);
+  }
+
+  .topPage {
+    background-color: var(--secondary-color);
+    border-bottom: 0.1rem solid var(--primary-color);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 9% 24% repeat(2, 1fr);
+  }
+
+  /* Album Page */
 
   .alPageCard {
     margin: 1rem 1rem 1rem 0.5rem;
@@ -595,10 +621,6 @@ footer > p {
     display: flex;
     justify-self: flex-start;
     line-height: 1.5rem;
-  }
-
-  .artist-name {
-    font-size: var(--primary-content-desktop);
   }
 
   .alPageTitle {
@@ -633,102 +655,95 @@ footer > p {
     display: inline;
     justify-self: end;
     margin-right: 1rem;
-    .topPage {
-      background-color: var(--secondary-color);
-      border-bottom: 0.1rem solid var(--primary-color);
-      width: 100%;
-      display: grid;
-      grid-template-columns: 9% 24% repeat(2, 1fr);
-    }
+  }
 
-    h1 {
-      font-size: var(--logo-desktop);
-      grid-column: 2/3;
-      grid-row: 1/2;
-    }
+  h1 {
+    font-size: var(--logo-desktop);
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
 
-    .link-logo {
-      height: 3.5rem;
-      grid-column: 1/2;
-      grid-row: 1/2;
-    }
+  .link-logo {
+    height: 3.5rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
 
-    .topPage > a {
-      display: block;
-      margin: auto;
-      text-decoration: none;
-      color: var(--primary-color);
-      font-size: var(--title-desktop);
-      font-weight: var(--bold);
-      font-family: var(--font-content);
-    }
+  .topPage > a {
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: var(--title-desktop);
+    font-weight: var(--bold);
+    font-family: var(--font-content);
+  }
 
-    .navBarBottom {
-      display: none;
-    }
+  .navBarBottom {
+    display: none;
+  }
 
-    .search-result {
-      grid-template-columns: repeat(3, 20rem);
-    }
+  .search-result {
+    grid-template-columns: repeat(3, 20rem);
+  }
 
-    footer {
-      background-color: var(--secondary-color);
-      width: 100%;
-      padding-top: 0.5rem;
-      margin-top: 1rem;
-      margin-bottom: 0rem;
-      bottom: 0;
-      border-top: 0.1rem solid var(--primary-color);
-      display: flex;
-      justify-content: space-between;
-    }
+  footer {
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    bottom: 0;
+    border-top: 0.1rem solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+  }
 
-    footer > p {
-      font-size: var(--secondary-content-desktop);
-    }
+  footer > p {
+    font-size: var(--secondary-content-desktop);
+  }
 
-    footer > p:first-child {
-      padding-left: 2rem;
-    }
+  footer > p:first-child {
+    padding-left: 2rem;
+  }
 
-    footer > p:last-child {
-      padding-right: 2rem;
-    }
+  footer > p:last-child {
+    padding-right: 2rem;
+  }
 
-    .searchbarInput {
-      width: 40%;
-    }
+  .searchbarInput {
+    width: 40%;
+  }
 
-    .searchbarInput::placeholder {
-      font-size: 1rem;
-    }
+  .searchbarInput::placeholder {
+    font-size: 1rem;
+  }
 
-    /* Discovery Page */
+  /* Discovery Page */
 
-    .dropdowns-form {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .dropdowns-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    .dropdown-select {
-      padding: 0.5rem;
-      font-size: 1.2rem;
-      place-self: center;
-    }
+  .dropdown-select {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    place-self: center;
+  }
 
-    .playButton {
-      width: 10rem;
-      height: 2.5rem;
-      font-size: var(--font-content);
-      place-self: center;
-    }
+  .playButton {
+    width: 10rem;
+    height: 2.5rem;
+    font-size: var(--font-content);
+    place-self: center;
+  }
 
-    .player-container {
-      margin-top: 2rem;
-    }
+  .player-container {
+    margin-top: 2rem;
+  }
 
-    .discoveryCard {
-      margin-top: 3.5rem;
-    }
+  .discoveryCard {
+    margin-top: 3.5rem;
   }
 }
