@@ -11,11 +11,10 @@ export default function Card({
     <figure className="alPageCard">
       <img src={imageMusic} alt="artist illustration" className="albumIMG" />
       <figcaption className="alPageDesc">
-        <h4 className="artist-name">
+        <h3 className="artist-name">
           <strong>{artistNameAlbum}</strong>
-          <br />
-        </h4>
-        <h5>Album: {albumName}</h5>
+        </h3>
+        <h4>Album: {albumName}</h4>
         <h4 className="alPageTitle">{albumTitle}</h4>
         <p>{albumYear}</p>
       </figcaption>

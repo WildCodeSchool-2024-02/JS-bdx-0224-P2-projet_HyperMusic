@@ -454,7 +454,6 @@ footer > p {
   flex-direction: column;
   justify-content: center;
   font-weight: var(--medium);
-  font: 300;
 }
 
 .alPageTitle {
