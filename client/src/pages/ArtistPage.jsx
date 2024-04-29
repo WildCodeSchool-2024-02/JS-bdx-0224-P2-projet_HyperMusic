@@ -29,7 +29,6 @@ function ArtistPage() {
         }));
         setAlbumArtistData({ items: albumWithYear });
         setLoading(false);
-        console.info(data)
       });
 
     fetch(
@@ -40,7 +39,6 @@ function ArtistPage() {
       .then((data) => {
         setSingleArtistData(data);
         setLoading(false);
-        console.info(data);
       })
       .catch((error) => {
         console.error("Error fetching artist data:", error);
