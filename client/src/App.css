@@ -241,7 +241,7 @@ main {
 .search-result {
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;

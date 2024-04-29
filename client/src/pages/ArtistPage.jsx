@@ -18,8 +18,7 @@ function ArtistPage() {
       .then((data) => {
         setArtistData(data);
         setLoading(false);
-      })
-    
+      });
 
     fetch(`https://api.spotify.com/v1/artists/${artistId}/albums`, authAccess)
       .then((result) => result.json())
@@ -30,7 +29,8 @@ function ArtistPage() {
         }));
         setAlbumArtistData({ items: albumWithYear });
         setLoading(false);
-      })
+        console.info(data)
+      });
 
     fetch(
       `https://api.spotify.com/v1/artists/${artistId}/top-tracks`,
@@ -76,6 +76,7 @@ function ArtistPage() {
               imageAlbum={album.images[1].url}
               releaseDate={album.releaseYear}
               albumId={album.id}
+              albumType="Album"
             />
           ))}
       </section>
@@ -95,6 +96,7 @@ function ArtistPage() {
               }
               imageAlbum={single.album.images[1].url}
               albumId={single.album.id}
+              albumType="Single"
             />
           ))}
       </section>
