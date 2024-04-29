@@ -6,8 +6,9 @@ const musicIds = [
   "65z49KvgmU4dHJb3MQQyAs",
   "07JqNLmPUJSlcouGQoJlzq",
   "21NPl2Tn6rjzhGVOoa7Shz",
-  "3V0RvmFVgyqAyzGXCJqINF",
+  "59xD5osEFsaNt5PXfIKUnX",
   "6DJ6Va1jpFcErKtQi7BAJv",
+  "5nJvKQsFRmCp2i7EiKjZDg",
 ];
 
 export default musicIds;
