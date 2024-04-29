@@ -11,6 +11,16 @@ import musicIds from "../musicIds";
 
 export const getOnlyYear = (dateString) => `(${dateString.split("-")[0]})`;
 
+export const truncateText = (text, maxLength) => {
+  if (text.length <= maxLength) {
+    return text;
+  }
+  const lastSpaceIndex = text.lastIndexOf(" ");
+  let truncatedText = text.slice(0, lastSpaceIndex);
+  truncatedText += "...";
+  return truncatedText;
+};
+
 function Home() {
   const authAccess = useLoaderData();
   const artistIdsString = artistIds.join(",");
@@ -61,25 +71,21 @@ function Home() {
   }, []);
   return (
     <>
-      <h2>Albums incontournables :</h2>
+      <h2 className="home-first-title">Best albums :</h2>
       <section className="best-album">
         {albumData.map((album) => (
           <AlbumCard
             key={album.id}
-            artistNameAlbum={
-              album.artists[0].name.slice(0, 24) +
-              (album.artists[0].name.length > 24 ? "..." : "")
-            }
-            albumName={
-              album.name.slice(0, 26) + (album.name.length > 26 ? "..." : "")
-            }
+            artistNameAlbum={truncateText(album.artists[0].name, 24)}
+            albumName={truncateText(album.name, 26)}
             imageAlbum={album.images[1].url}
             releaseDate={album.releaseYear}
             albumId={album.id}
+            albumType="Album"
           />
         ))}
       </section>
-      <h2>Le choix de l&apos;équipe :</h2>
+      <h2>Team choice :</h2>
       <section className="team-choice">
         {musicData.map((music) => (
           <MusicCard
@@ -91,14 +97,12 @@ function Home() {
           />
         ))}
       </section>
-      <h2>Artistes à succès :</h2>
+      <h2>Popular artists :</h2>
       <section className="popular-artist">
         {artistData.map((artist) => (
           <ArtistCard
             key={artist.id}
-            artistName={
-              artist.name.slice(0, 34) + (artist.name.length > 34 ? "..." : "")
-            }
+            artistName={truncateText(artist.name, 34)}
             imageArtist={artist.images[1].url}
             artistId={artist.id}
           />

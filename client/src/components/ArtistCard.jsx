@@ -11,7 +11,7 @@ export default function ArtistCard({ artistName, imageArtist, artistId }) {
         className="artist-picture"
       />
       <figcaption className="artist-desc">
-        Artiste : <strong className="artist-name">{artistName}</strong>
+        Artist : <strong className="artist-name">{artistName}</strong>
       </figcaption>
     </figure>
   );
