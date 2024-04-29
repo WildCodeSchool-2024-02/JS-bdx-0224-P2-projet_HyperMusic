@@ -330,6 +330,36 @@ nav > a {
   width: 15rem;
 }
 
+/*ArtistPage*/
+
+.album-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+.artist-page-image {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: 13rem;
+  height: 10rem;
+}
+
+.artist-page-album-card .artist-page-link-card .artist-page-album-picture {
+  border-radius: 50%;
+}
+
+.artist-page-artist-name {
+  font-size: 2rem;
+}
+
 /* Footer */
 
 footer {
