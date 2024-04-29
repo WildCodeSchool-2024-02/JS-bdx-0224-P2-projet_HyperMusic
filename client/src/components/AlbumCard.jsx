@@ -7,6 +7,7 @@ export default function AlbumCard({
   imageAlbum,
   releaseDate,
   albumId,
+  albumType,
 }) {
   return (
     <figure className="album-card">
@@ -18,7 +19,7 @@ export default function AlbumCard({
       />
       <figcaption className="album-desc">
         <strong className="artist-name">{artistNameAlbum}</strong>
-        Album : {albumName} {releaseDate}
+        {albumType} : {albumName} {releaseDate}
       </figcaption>
     </figure>
   );
@@ -30,6 +31,7 @@ AlbumCard.propTypes = {
   imageAlbum: PropTypes.string.isRequired,
   releaseDate: PropTypes.string,
   albumId: PropTypes.string.isRequired,
+  albumType: PropTypes.string.isRequired,
 };
 
 AlbumCard.defaultProps = {

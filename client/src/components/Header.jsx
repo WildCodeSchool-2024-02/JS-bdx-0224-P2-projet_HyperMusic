@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
+import logoSrc from "../assets/images/Melody-Find-removebg-preview3.png";
 
 function Header() {
   return (
     <header className="topPage">
-      <Link to="/">
+      <Link to="/" className="link-logo">
         <img
           className="logo"
-          src="src/assets/images/Melody-Find-removebg-preview 3.png"
+          src={logoSrc}
           alt="back to the homepage"
         />
       </Link>

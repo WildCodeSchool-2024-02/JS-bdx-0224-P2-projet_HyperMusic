@@ -13,9 +13,9 @@
   --font-content: "Roboto", "Rubik", sans-serif;
 
   /* Font sizes */
-  --logo-mobile: 1.25rem;
+  --logo-mobile: 1.8rem;
   --logo-desktop: 2.125rem;
-  --placeholder-mobile: 0.75rem;
+  --placeholder-mobile: 0.8rem;
   --placeholder-desktop: 1.25rem;
   --title-mobile: 1rem;
   --title-desktop: 1.5rem;
@@ -81,13 +81,24 @@ body {
   background-attachment: fixed;
 }
 
+h1 {
+  font-size: var(--logo-mobile);
+  font-family: var(--font-title);
+  color: var(--primary-color);
+  padding-bottom: 0.3rem;
+}
+
 h2 {
   font-size: var(--title-mobile);
-  font-family: var(--font-title);
+  font-family: var(--font-content);
   font-weight: var(--bold);
   color: var(--primary-color);
   text-shadow: var(--font-stroke);
   margin: 0.7rem;
+}
+
+main {
+  min-height: 82vh;
 }
 
 /* HomePage sections & Cards */
@@ -145,6 +156,8 @@ h2 {
   justify-content: center;
   padding-right: 0.1rem;
   white-space: normal;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .artist-desc {
@@ -166,6 +179,10 @@ h2 {
   bottom: 0;
 }
 
+.home-first-title {
+  margin-top: 1.1rem;
+}
+
 /* SearchPage */
 
 .searchbar {
@@ -173,7 +190,7 @@ h2 {
   justify-content: center;
   align-items: center;
   background: rgba(var(--primary-color-rgb), var(--opacity-card));
-  border: 2px solid var(--primary-color);
+  border-bottom: 0.1rem solid var(--primary-color);
   height: 3rem;
   margin-bottom: 1rem;
 }
@@ -181,17 +198,21 @@ h2 {
 .searchbarInput {
   width: 70%;
   height: 2.1rem;
-  padding: 10px;
-  border: 1px solid var(--primary-color);
+  padding: 0.4rem;
   border-radius: 1rem;
   background: var(--primary-color);
+  position: relative;
 }
 
 .searchbarInput::placeholder {
   color: var(--secondary-color);
   font-family: var(--font-content);
-  font-weight: var(--medium);
-  font-size: 0.85rem;
+  font-weight: var(--semi-bold);
+  font-size: var(--placeholder-mobile);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.7rem;
 }
 
 .search-button {
@@ -201,7 +222,6 @@ h2 {
 
 .search-icon {
   width: 50px;
-  display: flex;
   padding-left: 20px;
 }
 
@@ -211,9 +231,18 @@ h2 {
   justify-content: center;
 }
 
+.title-search-result {
+  margin: 1rem;
+}
+
+.search-result-container {
+  display: flex;
+}
+
 .search-result {
+  margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   overflow-x: auto;
   white-space: nowrap;
   scrollbar-width: none;
@@ -228,20 +257,48 @@ label {
   font-size: 0px;
 }
 
+/* ArtistPage */
+
+.album-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+.artist-page-image {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: 13rem;
+  height: 10rem;
+}
+
+.artist-page-album-card .artist-page-link-card .artist-page-album-picture {
+  border-radius: 50%;
+}
+
+.artist-page-artist-name {
+  font-size: 2rem;
+}
+
 .topPage {
   background-color: var(--secondary-color);
   border-bottom: 0.1rem solid var(--primary-color);
   width: 100%;
-  color: var(--primary-color);
-  font-size: var(--title-mobile);
-  font-family: var(--font-title);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .logo {
-  height: 4rem;
+  height: 3rem;
+  padding: 0.5rem 0.5rem 0.3rem 0.3rem;
 }
 
 .linkToOtherPages {
@@ -252,6 +309,7 @@ label {
   background-color: var(--secondary-color);
   position: fixed;
   width: 100%;
+  height: 9%;
   margin-top: 0;
   bottom: 0;
   border-top: 0.1rem solid var(--primary-color);
@@ -266,9 +324,6 @@ label {
 
 nav > a {
   text-decoration: none;
-  color: var(--primary-color);
-  font-size: var(--primary-content-mobile);
-  font-family: var(--font-content);
   width: var(--logo-mobile);
   display: flex;
   flex-direction: column;
@@ -276,32 +331,136 @@ nav > a {
   margin: 0.5rem;
 }
 
+.navBarBottom > a:last-child,
+.navBarBottom > a:nth-last-child(2),
+.navBarBottom > a:nth-last-child(3) {
+  color: var(--primary-color);
+  font-size: var(--title-mobile);
+  font-family: var(--font-content);
+  font-weight: var(--bold);
+}
+
 .title-404 {
   font-size: var(--logo-desktop);
 }
 
-.iconeNavBar {
-  padding-right: 0.25rem;
+.title-waiting-choice,
+.subtitle-waiting-choice {
+  text-align: center;
+  margin: 2rem;
+}
+
+.subtitle-waiting-choice {
+  font-size: var(--secondary-content-mobile);
+}
+
+.img-waiting-choice {
+  display: block;
+  margin: auto;
+  margin-top: 3rem;
+  width: 15rem;
+}
+
+/*ArtistPage*/
+
+.album-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+.artist-page-image {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: 13rem;
+  height: 10rem;
+}
+
+.artist-page-album-card .artist-page-link-card .artist-page-album-picture {
+  border-radius: 50%;
+}
+
+.artist-page-artist-name {
+  font-size: 2rem;
 }
 
 /* Footer */
 
 footer {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
   width: 100%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.25rem;
-  margin-top: 0;
-  position: fixed;
-  bottom: 3.5rem;
+  padding: 0.3rem;
+  margin-bottom: 3.7rem;
   color: var(--primary-color);
   font-size: var(--primary-content-mobile);
   font-family: var(--font-content);
   display: flex;
   justify-content: space-around;
   z-index: 0;
+  text-shadow: var(--font-stroke);
+}
+
+footer > p {
+  font-size: var(--secondary-content-mobile);
+  font-family: var(--font-content);
+  font-weight: var(--bold);
+}
+/* Discovery page */
+
+.rules {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-family: var(--font-content);
+}
+
+.dropdown-select {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--rounded);
+  font-family: var(--font-content);
+}
+
+.dropdown-option {
+  background-color: rgb();
+}
+
+.discoveryCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.playButton {
+  background: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-content);
+  border-radius: var(--rounded);
+  width: 8rem;
+  height: 1.5rem;
+  display: block;
+  margin: auto;
+  margin-top: 0.9rem;
+}
+
+.player-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.footerP {
+  text-decoration: none;
 }
 
 /* Albumpage */
@@ -359,7 +518,6 @@ footer {
   flex-direction: column;
   align-items: center;
   width: 95%;
-  /* max-width: 25rem; */
 }
 
 .infoTrack {
@@ -393,11 +551,21 @@ footer {
 }
 
 @media screen and (min-width: 992px) {
+  main {
+    min-height: 90vh;
+  }
+
   h2 {
     font-size: var(--title-desktop);
   }
 
-  .father {
+  .home-first-title {
+    margin-top: 1.5rem;
+  }
+
+  .artist-card,
+  .album-card,
+  .music-card {
     width: var(--bg-desktop-card-width);
     height: var(--bg-desktop-card-height);
     width: 100%;
@@ -465,5 +633,102 @@ footer {
     display: inline;
     justify-self: end;
     margin-right: 1rem;
+    .topPage {
+      background-color: var(--secondary-color);
+      border-bottom: 0.1rem solid var(--primary-color);
+      width: 100%;
+      display: grid;
+      grid-template-columns: 9% 24% repeat(2, 1fr);
+    }
+
+    h1 {
+      font-size: var(--logo-desktop);
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+
+    .link-logo {
+      height: 3.5rem;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    .topPage > a {
+      display: block;
+      margin: auto;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-size: var(--title-desktop);
+      font-weight: var(--bold);
+      font-family: var(--font-content);
+    }
+
+    .navBarBottom {
+      display: none;
+    }
+
+    .search-result {
+      grid-template-columns: repeat(3, 20rem);
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      width: 100%;
+      padding-top: 0.5rem;
+      margin-top: 1rem;
+      margin-bottom: 0rem;
+      bottom: 0;
+      border-top: 0.1rem solid var(--primary-color);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    footer > p {
+      font-size: var(--secondary-content-desktop);
+    }
+
+    footer > p:first-child {
+      padding-left: 2rem;
+    }
+
+    footer > p:last-child {
+      padding-right: 2rem;
+    }
+
+    .searchbarInput {
+      width: 40%;
+    }
+
+    .searchbarInput::placeholder {
+      font-size: 1rem;
+    }
+
+    /* Discovery Page */
+
+    .dropdowns-form {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dropdown-select {
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      place-self: center;
+    }
+
+    .playButton {
+      width: 10rem;
+      height: 2.5rem;
+      font-size: var(--font-content);
+      place-self: center;
+    }
+
+    .player-container {
+      margin-top: 2rem;
+    }
+
+    .discoveryCard {
+      margin-top: 3.5rem;
+    }
   }
 }
