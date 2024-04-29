@@ -454,6 +454,10 @@ footer > p {
   justify-content: center;
 }
 
+.footerP {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 992px) {
   main {
     min-height: 90vh;
