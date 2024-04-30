@@ -406,10 +406,13 @@ footer {
   text-shadow: var(--font-stroke);
 }
 
-footer > p {
+footer > p,
+.footerP {
   font-size: var(--secondary-content-mobile);
   font-family: var(--font-content);
   font-weight: var(--bold);
+  text-decoration: none;
+  color: var(--primary-color);
 }
 
 /* Album Page */
@@ -498,6 +501,8 @@ footer > p {
   justify-self: end;
   margin-right: 1rem;
 }
+
+
 
 /* Discovery page */
 
