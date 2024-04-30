@@ -1,165 +1,751 @@
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #eee;
-  margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  /* Colors */
+  --primary-color: #f4f6fc;
+  --secondary-color: #090a0e;
+  --primary-color-rgb: 244, 246, 252;
+  --secondary-color-rgb: 9, 10, 14;
+  --bg-gradient: linear-gradient(to top right, #3427a9, #bd419c);
+
+  /* Fonts */
+  --font-title: "Quicksand", "Poppins", sans-serif;
+  --font-content: "Roboto", "Rubik", sans-serif;
+
+  /* Font sizes */
+  --logo-mobile: 1.8rem;
+  --logo-desktop: 2.125rem;
+  --placeholder-mobile: 0.8rem;
+  --placeholder-desktop: 1.25rem;
+  --title-mobile: 1rem;
+  --title-desktop: 1.5rem;
+  --primary-content-mobile: 0.875rem;
+  --primary-content-desktop: 1.125rem;
+  --secondary-content-mobile: 0.75rem;
+  --secondary-content-desktop: 1rem;
+  --artist-name-mobile: 1.25rem;
+  --artist-name-desktop: 1.875rem;
+  --artist-desc-mobile: 0.75rem;
+  --artist-desc-desktop: 1rem;
+  --album-artist-name-mobile: 1.125rem;
+  --album-artist-name-desktop: 1.5rem;
+
+  /* Font weights */
+
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
+
+  /* Other font style */
+  --font-stroke: -0.025rem -0.025rem var(--secondary-color),
+    0.025rem -0.025rem var(--secondary-color),
+    -0.025rem 0.025rem var(--secondary-color),
+    0.025rem 0.025rem var(--secondary-color),
+    0.05rem 0.05rem var(--secondary-color);
+
+  /* Images & cards */
+  --opacity-card: 0.5;
+  --outside-shadow: 0 0.25rem 0.25rem 0 rgba(var(--secondary-color-rgb), 0.25);
+  --inner-shadow: rgba(var(--secondary-color-rgb), 0.2) 0 0.25rem 0.25rem 0
+    inset;
+  --rounded: 1.25rem;
+  --bg-mobile-card-width: 11.875rem;
+  --bg-mobile-card-height: 6.25rem;
+  --bg-desktop-card-width: 17.5rem;
+  --bg-desktop-card-height: 9.375rem;
+  --img-mobile-card: 5rem;
+  --img-desktop-card: 7rem;
+  --border-card: 0.063rem;
+  --border-img-card: 0.031rem;
+  --border-artist-mobile: 0.125rem;
+  --border-artist-desktop: 0.25rem;
+  --width-artist-mobile: 9.375rem;
+  --height-artist-mobile: 7rem;
+  --width-artist-desktop: 21.875rem;
+  --height-artist-desktop: 16.438rem;
+  --album-mobile-card: 5.625rem;
+  --album-desktop-card: 11.25rem;
+  --shuffle-album-mobile: 6.875rem;
+  --shuffle-album-desktop: 15rem;
 }
 
-.container {
-  height: 100vh;
-  background-image: url("./assets/images/background.webp");
-  background-size: cover;
-  background-position: top;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+}
+
+h1 {
+  font-size: var(--logo-mobile);
+  font-family: var(--font-title);
+  color: var(--primary-color);
+  padding-bottom: 0.3rem;
+}
+
+h2 {
+  font-size: var(--title-mobile);
+  font-family: var(--font-content);
+  font-weight: var(--bold);
+  color: var(--primary-color);
+  text-shadow: var(--font-stroke);
+  margin: 0.7rem;
+}
+
+main {
+  min-height: 82vh;
+}
+
+/* HomePage sections & Cards */
+
+.popular-artist,
+.best-album,
+.team-choice {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.artist-card,
+.album-card,
+.music-card {
+  margin: 0 1rem 1rem 0.5rem;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: var(--bg-mobile-card-width);
+  height: var(--bg-mobile-card-height);
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
   position: relative;
+}
+
+.artist-picture,
+.album-picture,
+.music-picture {
+  width: var(--img-mobile-card);
+  height: var(--img-mobile-card);
+  border-radius: 50%;
+  border: var(--border-img-card) solid var(--secondary-color);
+  box-shadow: var(--outside-shadow);
+  place-self: center;
+}
+
+.album-picture,
+.music-picture {
+  border-radius: var(--rounded);
+}
+
+.artist-desc,
+.album-desc,
+.music-desc {
+  background: var(--primary-color-rgb);
+  font-family: var(--font-content);
+  color: var(--secondary-color);
+  font-size: var(--secondary-content-mobile);
+  font-weight: var(--medium);
+  grid-column: 2/3;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 30px;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 0.1rem;
+  white-space: normal;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.artist-desc {
+  padding-bottom: 0.4rem;
+}
+
+.artist-name {
+  background: var(--primary-color-rgb);
+  font-size: var(--primary-content-mobile);
+  font-weight: var(--bold);
+}
+
+.link-card {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.home-first-title {
+  margin-top: 1.1rem;
+}
+
+/* SearchPage */
+
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-bottom: 0.1rem solid var(--primary-color);
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.searchbarInput {
+  width: 70%;
+  height: 2.1rem;
+  padding: 0.4rem;
+  border-radius: 1rem;
+  background: var(--primary-color);
+  position: relative;
+}
+
+.searchbarInput::placeholder {
+  color: var(--secondary-color);
+  font-family: var(--font-content);
+  font-weight: var(--semi-bold);
+  font-size: var(--placeholder-mobile);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.7rem;
+}
+
+.search-button {
+  border: none;
+  background: none;
+}
+
+.search-icon {
+  width: 50px;
+  padding-left: 20px;
+}
+
+.albumImage {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.title-search-result {
+  margin: 1rem;
+}
+
+.search-result-container {
+  display: flex;
+}
+
+.search-result {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.albumName {
+  font-size: 30px;
+  font-family: var(--font-content);
+}
+
+label {
+  font-size: 0px;
+}
+
+/* ArtistPage */
+
+.album-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+.artist-page-image {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: 13rem;
+  height: 10rem;
+}
+
+.artist-page-album-card .artist-page-link-card .artist-page-album-picture {
+  border-radius: 50%;
+}
+
+.artist-page-artist-name {
+  font-size: 2rem;
+}
+
+.topPage {
+  background-color: var(--secondary-color);
+  border-bottom: 0.1rem solid var(--primary-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-  font-size: 20px;
-  margin-top: 16px;
+  height: 3rem;
+  padding: 0.5rem 0.5rem 0.3rem 0.3rem;
 }
 
-.navbar ul {
-  display: flex;
-  gap: 20px;
-  list-style: none;
+.linkToOtherPages {
+  display: none;
 }
 
-.navbar a {
+.navBarBottom {
+  background-color: var(--secondary-color);
+  position: fixed;
+  width: 100%;
+  height: 9%;
+  margin-top: 0;
+  bottom: 0;
+  border-top: 0.1rem solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: var(--primary-content-mobile);
+  font-family: var(--font-content);
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-items: center;
+  z-index: 1;
+}
+
+nav > a {
   text-decoration: none;
-  color: #eee;
+  width: var(--logo-mobile);
   display: flex;
-  gap: 5px;
-  justify-content: end;
-  margin-top: auto;
-  font-size: 15px;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem;
 }
 
-.navbar a:hover {
-  scale: 110%;
+.navBarBottom > a:last-child,
+.navBarBottom > a:nth-last-child(2),
+.navBarBottom > a:nth-last-child(3) {
+  color: var(--primary-color);
+  font-size: var(--title-mobile);
+  font-family: var(--font-content);
+  font-weight: var(--bold);
 }
 
-.text-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.title-404 {
+  font-size: var(--logo-desktop);
+}
+
+.title-waiting-choice,
+.subtitle-waiting-choice {
   text-align: center;
+  margin: 2rem;
 }
 
-.block-primary {
-  text-transform: uppercase;
-  margin-bottom: 30px;
+.subtitle-waiting-choice {
+  font-size: var(--secondary-content-mobile);
 }
 
-.block-primary-main {
-  font-size: 50px;
-  font-weight: 400;
-  letter-spacing: 5px;
-  animation: blink 12s infinite;
-}
-
-.block-primary-sub {
+.img-waiting-choice {
   display: block;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 7px;
+  margin: auto;
+  margin-top: 3rem;
+  width: 15rem;
 }
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 10px 20px;
-  display: inline-block;
-  border-radius: 100px;
-  transition: all 0.2s;
-  position: relative;
+/*ArtistPage*/
+
+.album-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+}
+.artist-page-image {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  width: 13rem;
+  height: 10rem;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.artist-page-album-card .artist-page-link-card .artist-page-album-picture {
+  border-radius: 50%;
 }
 
-.btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+.artist-page-artist-name {
+  font-size: 2rem;
 }
 
-.btn-white {
-  background-color: #fff;
-  color: #777;
-  font-size: 14px;
-}
+/* Footer */
 
 footer {
-  position: absolute;
-  top: 85%;
-  left: 75%;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  width: 100%;
+  padding: 0.3rem;
+  margin-bottom: 3.7rem;
+  color: var(--primary-color);
+  font-size: var(--primary-content-mobile);
+  font-family: var(--font-content);
+  display: flex;
+  justify-content: space-around;
+  z-index: 0;
+  text-shadow: var(--font-stroke);
 }
 
-.wcs {
+footer > p,
+.footerP {
+  font-size: var(--secondary-content-mobile);
+  font-family: var(--font-content);
+  font-weight: var(--bold);
   text-decoration: none;
-  color: #ff1493ad;
+  color: var(--primary-color);
 }
 
-.wcs:hover {
-  border-bottom: solid 1px #ff1493ad;
+/* Album Page */
+
+.alPageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-@media screen and (max-width: 760px) {
-  .logo {
+.alPageCard {
+  margin: 1rem 1rem 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 80%;
+  max-width: 15rem;
+  height: 7rem;
+}
+
+.albumIMG {
+  top: 8%;
+  margin-left: 0.5rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--rounded);
+  z-index: 1;
+  margin-top: 0.5rem;
+  place-self: center;
+}
+
+.alPageDesc {
+  width: auto;
+  white-space: normal;
+  font-family: var(--font-content);
+  margin-left: 1rem;
+  margin-top: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: var(--medium);
+}
+
+.alPageTitle {
+  font-weight: var(--normal);
+}
+
+.tracksCard {
+  margin: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+}
+
+.infoTrack {
+  width: 95%;
+  max-height: 2.2rem;
+  font-family: var(--font-content);
+  margin: 0 1.5rem 1rem 0.5rem;
+  background: rgba(var(--primary-color-rgb), var(--opacity-card));
+  border-radius: var(--rounded);
+  border: var(--border-card) solid var(--primary-color);
+  box-shadow: var(--outside-shadow), var(--inner-shadow);
+  height: var(--bg-mobile-card-height);
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  max-width: 27rem;
+  align-items: center;
+}
+
+.trackPosition {
+  margin-left: 1rem;
+}
+
+.trackTitle {
+  width: auto;
+}
+
+.trackLength {
+  width: auto;
+  display: inline;
+  justify-self: end;
+  margin-right: 1rem;
+}
+
+/* Discovery page */
+
+.rules {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.dropdowns {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  font-family: var(--font-content);
+}
+
+.dropdown-select {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: var(--rounded);
+  font-family: var(--font-content);
+}
+
+.dropdown-option {
+  background-color: rgb();
+}
+
+.discoveryCard {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.playButton {
+  background: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-content);
+  border-radius: var(--rounded);
+  width: 8rem;
+  height: 1.5rem;
+  display: block;
+  margin: auto;
+  margin-top: 0.9rem;
+}
+
+.player-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.footerP {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    min-height: 90vh;
+  }
+
+  h2 {
+    font-size: var(--title-desktop);
+  }
+
+  .home-first-title {
+    margin-top: 1.5rem;
+  }
+
+  .artist-card,
+  .album-card,
+  .music-card {
+    width: var(--bg-desktop-card-width);
+    height: var(--bg-desktop-card-height);
+  }
+
+  .artist-picture,
+  .album-picture,
+  .music-picture {
+    width: var(--img-desktop-card);
+    height: var(--img-desktop-card);
+    margin: 0 0.8rem 0 0.8rem;
+  }
+
+  .artist-desc,
+  .album-desc,
+  .music-desc {
+    font-size: var(--secondary-content-desktop);
+  }
+
+  .artist-name {
+    font-size: var(--primary-content-desktop);
+  }
+
+  .topPage {
+    background-color: var(--secondary-color);
+    border-bottom: 0.1rem solid var(--primary-color);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 9% 24% repeat(2, 1fr);
+  }
+
+  /* Album Page */
+
+  .alPageCard {
+    margin: 1rem 1rem 1rem 0.5rem;
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    width: 80%;
+    max-width: 25rem;
+    height: 9rem;
+  }
+
+  .albumIMG {
+    width: var(--img-desktop-card);
+    height: var(--img-desktop-card);
+    margin: 1rem 0.8rem 0 -1rem;
+    padding-left: 0.2rem;
+  }
+
+  .alPageDesc {
+    font-size: var(--secondary-content-desktop);
+    display: flex;
+    justify-self: flex-start;
+    line-height: 1.5rem;
+  }
+
+  .alPageTitle {
+    font-weight: var(--normal);
+  }
+
+  .tracksCard {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+  }
+
+  .infoTrack {
+    margin: 0.5rem 1.5rem 1rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    max-width: 35rem;
+  }
+
+  .trackPosition {
+    margin-left: 1.5rem;
+  }
+
+  .trackTitle {
+    width: auto;
+  }
+
+  .trackLength {
+    width: auto;
+    display: inline;
+    justify-self: end;
+    margin-right: 1rem;
+  }
+
+  h1 {
+    font-size: var(--logo-desktop);
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  .link-logo {
+    height: 3.5rem;
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .topPage > a {
+    display: block;
+    margin: auto;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: var(--title-desktop);
+    font-weight: var(--bold);
+    font-family: var(--font-content);
+  }
+
+  .navBarBottom {
     display: none;
   }
 
-  .container {
-    justify-content: center;
+  .search-result {
+    grid-template-columns: repeat(3, 20rem);
   }
 
   footer {
-    position: absolute;
-    top: 85%;
-    left: 20%;
+    background-color: var(--secondary-color);
+    width: 100%;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0rem;
+    bottom: 0;
+    border-top: 0.1rem solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
   }
-}
 
-@media screen and (min-width: 761px) and (max-width: 960px) {
-  footer {
-    position: absolute;
-    top: 85%;
-    left: 60%;
+  footer > p {
+    font-size: var(--secondary-content-desktop);
   }
-}
 
-@keyframes blink {
-  20%,
-  24%,
-  55% {
-    color: #111;
-    text-shadow: none;
+  footer > p:first-child {
+    padding-left: 2rem;
   }
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow:
-      0 0 5px #ff1493ad,
-      0 0 15px #eee,
-      0 0 20px #ff1493ad,
-      0 0 40px #a00ac9,
-      0 0 60px #ff0000,
-      0 0 10px #970dc5,
-      0 0 98px #ff0000;
-    color: #fff;
+
+  footer > p:last-child {
+    padding-right: 2rem;
+  }
+
+  .searchbarInput {
+    width: 40%;
+  }
+
+  .searchbarInput::placeholder {
+    font-size: 1rem;
+  }
+
+  /* Discovery Page */
+
+  .dropdowns-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .dropdown-select {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    place-self: center;
+  }
+
+  .playButton {
+    width: 10rem;
+    height: 2.5rem;
+    font-size: var(--font-content);
+    place-self: center;
+  }
+
+  .player-container {
+    margin-top: 2rem;
+  }
+
+  .discoveryCard {
+    margin-top: 3.5rem;
   }
 }
